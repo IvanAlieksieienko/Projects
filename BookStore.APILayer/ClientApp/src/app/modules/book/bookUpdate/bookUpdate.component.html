@@ -1,0 +1,49 @@
+<div class="book-update-page">
+
+    <div class="book-update-group">
+        <label>Изменение книги</label>
+        <br>
+        <label>Название</label>
+        <br>
+        <input [(ngModel)]="_new_book.Title" class="field_book_update" placeholder="New title..." />
+        <br>
+        <div class="author-fields-add-update">
+            <label>Авторы</label><button (click)="sub_author_fields()">-</button> <button
+                (click)="add_author_fields()">+</button>
+        </div>
+        <br>
+        <ul>
+            <li *ngFor="let item of create_array_authors(); let i = index;">
+                <input [(ngModel)]="_authors_of_book[i]" class="field_authors_in_book_update"
+                    placeholder="Author name..." />
+            </li>
+        </ul>
+        <br>
+        <div class="genre-fields-add-update">
+            <label>Жанры</label><button (click)="sub_genre_fields()">-</button> <button
+                (click)="add_genre_fields()">+</button>
+        </div>
+        <br>
+        <ul>
+            <li *ngFor="let item of create_array_genres(); let i = index;">
+                <input [(ngModel)]="_genres_of_book[i]" class="field_genres_in_book_update"
+                    placeholder="New genre..." />
+            </li>
+        </ul>
+        <br>
+        <div class="price-and-date-update">
+            <label>Цена</label>
+            <br>
+            <input [(ngModel)]="_new_book.Price" class="field_book_update" placeholder="New price..." />
+            <br>
+            <label>Дата публикации</label>
+            <br>
+            <input [(ngModel)]="_release_date" class="field_book_update" placeholder="New release date..." />
+            <br>
+        </div>
+        <form>
+            <input type="button" value="Отправить" (click)="update_book()" class="send-book-button-update">
+        </form>
+    </div>
+
+</div>

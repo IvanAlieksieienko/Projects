@@ -1,0 +1,20 @@
+<div class="user-update-page">
+
+    <div class="user-add-group-update">
+        <label>Изменение данных</label>
+        <br>
+        <label>email</label>
+        <br>
+        <input [(ngModel)]="_new_user.Email" class="field_user_update" />
+        <br>
+        <label>Пароль</label>
+        <br>
+        <input [(ngModel)]="_new_user.Password" class="field_user_delete" />
+        <br>
+        <form>
+            <input type="button" value="Отправить" (click)="update_user(_shared_service._selected_user)"
+                class="send-user-button-update">
+        </form>
+    </div>
+
+</div>

@@ -1,0 +1,15 @@
+<div class="genre-add-page">
+
+    <div class="genre-add-group">
+        <label>Добавление жанра</label>
+        <br>
+        <label>Название</label>
+        <br>
+        <input [(ngModel)]="_new_genre.Name" class="field_genre" placeholder="Genre name..." />
+        <br>
+        <form>
+            <input type="button" value="Отправить" (click)="add_genre()" class="send-genre-button">
+        </form>
+    </div>
+
+</div>

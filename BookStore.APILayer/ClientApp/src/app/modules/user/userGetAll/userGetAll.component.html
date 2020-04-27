@@ -1,0 +1,56 @@
+<div class="get-all-users" *ngIf="_shared_service._is_authorized &&_shared_service._is_admin">
+
+    <div class="without-user" *ngIf="!_shared_service._is_show_selected_user">
+        <ul class="user-get-all">
+            <li *ngFor="let b of _shared_service._all_users" [class.selected]="b===_shared_service._selected_user"
+                (click)="show_user(b)">
+                {{b.email}}
+            </li>
+        </ul>
+    </div>
+
+    <div class="with-user" *ngIf="_shared_service._is_show_selected_user">
+        <div class="users">
+            <ul class="user-get-all">
+                <li *ngFor="let b of _shared_service._all_users" [class.selected]="b===_shared_service._selected_user"
+                    (click)="show_user(b)">
+                    {{b.email}}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="selected-user" *ngIf="_shared_service._is_show_selected_user">
+        <div class="user">
+            <div class="info-user">
+                <h5><b>email: </b>{{_shared_service._selected_user.email}}</h5>
+                <br>
+                <h5><b>Корзина: </b></h5>
+                <ul class="book-basket-in-selected-user">
+                    <li *ngFor="let book of _shared_service._selected_user.userBasket" (click)="check_book(book.bookID)">
+                        {{book.bookTitle}}
+                    </li>
+                </ul>
+                <h5><b>Покупки: </b></h5>
+                <ul class="book-user-in-selected-user">
+                    <li *ngFor="let book of _shared_service._selected_user.userBook" (click)="check_book(book.bookID)">
+                        {{book.bookTitle}}
+                    </li>
+                </ul>
+                <br>
+                <h5><b>Пароль: </b>{{_shared_service._selected_user.password}}</h5>
+            </div>
+            <div class="management-user">
+                <a class="updade_user_style" *ngIf="_shared_service._is_authorized && _shared_service._is_admin"
+                    routerLink="update" routerlinkactive="active">
+                    <h4>Редактировать</h4>
+                </a>
+                <button class="delete_user_style" *ngIf="_shared_service._is_authorized && _shared_service._is_admin"
+                    (click)="turn_user_delete_page(_shared_service._selected_user)">
+                    <h4>Удалить</h4>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>

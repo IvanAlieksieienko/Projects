@@ -1,0 +1,24 @@
+<div class="group-menu">
+        <a routerLink="/books" routerlinkactive="active">
+                <h4>Книги</h4>
+        </a>
+        <a routerLink="/authors" routerlinkactive="active">
+                <h4>Авторы</h4>
+        </a>
+        <a routerLink="/genres" routerlinkactive="active">
+                <h4>Жанры</h4>
+        </a>
+        <a routerLink="/management" routerlinkactive="active" *ngIf="_shared_service._is_admin">
+                <h4>Управление</h4>
+        </a>
+        <a routerLink="/users" routerlinkactive="active" *ngIf="_shared_service._is_admin">
+                <h4>Пользователи</h4>
+        </a>
+        <a routerLink="/profile" routerlinkactive="active" *ngIf="_shared_service._is_authorized">
+                <h4>Аккаунт</h4>
+        </a>
+        <a routerLink="/userbasket" routerlinkactive="active"
+                *ngIf="_shared_service._is_authorized && !_shared_service._is_admin">
+                <h4>Корзина</h4>
+        </a>
+</div>

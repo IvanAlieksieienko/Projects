@@ -1,0 +1,15 @@
+<div class="author-update-page">
+
+    <div class="author-add-group-update">
+        <label>Изменение автора</label>
+        <br>
+        <label>Имя</label>
+        <br>
+        <input [(ngModel)]="_new_author.Name" class="field_author_update" placeholder="New author name..." />
+        <br>
+        <form>
+            <input type="button" value="Отправить" (click)="update_author()" class="send-author-button-update">
+        </form>
+    </div>
+
+</div>

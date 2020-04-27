@@ -1,0 +1,62 @@
+<div class="get-all-authors">
+
+    <div class="without-author" *ngIf="!_shared_service._is_show_selected_author">
+        <ul class="author-get-all">
+            <li *ngFor="let a of _shared_service._all_authors" [class.selected]="a === _shared_service._selected_author"
+                (click)="show_author(a)">
+                {{a.name}}
+                <ul class="author-books">
+                    <li *ngFor="let book of a.authorBook">
+                        {{book.bookTitle}}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="with-author" *ngIf="_shared_service._is_show_selected_author">
+        <div class="authors">
+            <ul class="author-get-all">
+                <li *ngFor="let a of _shared_service._all_authors"
+                    [class.selected]="a === _shared_service._selected_author" (click)="show_author(a)">
+                    {{a.name}}
+                    <ul class="author-books">
+                        <li *ngFor="let book of a.authorBook">
+                            {{book.bookTitle}}
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="selected-author" *ngIf="_shared_service._is_show_selected_author">
+        <div class="author">
+            <div class="info-author">
+                <h5><b>Имя: </b>{{_shared_service._selected_author.name}}</h5>
+                <br>
+                <h5><b>Книги: </b></h5>
+                <ul class="author-books-in-selected-author">
+                    <li *ngFor="let book of _shared_service._selected_author.authorBook"
+                        (click)="check_book(book.bookID)">
+                        {{book.bookTitle}}
+                    </li>
+                </ul>
+            </div>
+            <div class="management_author">
+                <div class="management">
+                    <a class="updade_author_style" *ngIf="_shared_service._is_authorized && _shared_service._is_admin"
+                        routerLink="update" routerlinkactive="active">
+                        <h4>Редактировать</h4>
+                    </a>
+                    <button class="delete_author_style"
+                        *ngIf="_shared_service._is_authorized && _shared_service._is_admin"
+                        (click)="turn_author_delete_page(_shared_service._selected_author)">
+                        <h4>Удалить</h4>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

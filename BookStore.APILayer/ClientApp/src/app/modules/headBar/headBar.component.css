@@ -1,0 +1,30 @@
+.authorization-block {
+  margin-left: 65%;
+}
+
+.authorization-block a {
+  margin-right: 15%;
+  height: 70px;
+  width: 200px;
+  padding: 18px 5px 5px 5px;
+  white-space: nowrap;
+  -o-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  color: gray;
+  background: white;
+}
+
+.authorization-block a:hover {
+  -o-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}

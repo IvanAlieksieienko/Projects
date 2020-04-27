@@ -1,0 +1,17 @@
+<div class="register-group">
+        <div class="form-group">
+                <label>Регистрация</label>
+                <br>
+                <label>EMAIL</label>
+                <br>
+                <input [(ngModel)]="_register_model.email" class="field" />
+                <br>
+                <label>Пароль</label>
+                <br>
+                <input [(ngModel)]="_register_model.password" class="field" type="password" />
+                <br>
+                <form>
+                        <input type="button" value="Отправить" (click)="register()" class="send-button">
+                </form>
+        </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="author-add-page">
+
+    <div class="author-add-group">
+        <label>Добавление автора</label>
+        <br>
+        <label>Имя</label>
+        <br>
+        <input [(ngModel)]="_new_author.Name" class="field_author" placeholder="Author name..." />
+        <br>
+        <form>
+            <input type="button" value="Отправить" (click)="add_author()" class="send-author-button">
+        </form>
+    </div>
+
+</div>

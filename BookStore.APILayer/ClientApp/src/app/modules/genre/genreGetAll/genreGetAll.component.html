@@ -1,0 +1,61 @@
+<div class="get-all-genres">
+
+    <div class="without-genre" *ngIf="!_shared_service._is_show_selected_genre">
+        <ul class="genre-get-all">
+            <li *ngFor="let g of _shared_service._all_genres" [class.selected]="g === _shared_service._selected_genre"
+                (click)="show_genre(g)">
+                {{g.name}}
+                <ul class="genre-books">
+                    <li *ngFor="let book of g.genreBook">
+                        {{book.bookTitle}}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="with-genre" *ngIf="_shared_service._is_show_selected_genre">
+        <div class="genres">
+            <ul class="genre-get-all">
+                <li *ngFor="let g of _shared_service._all_genres"
+                    [class.selected]="g === _shared_service._selected_genre" (click)="show_genre(g)">
+                    {{g.name}}
+                    <ul class="genre-books">
+                        <li *ngFor="let book of g.genreBook">
+                            {{book.bookTitle}}
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="selected-genre" *ngIf="_shared_service._is_show_selected_genre">
+        <div class="genre">
+            <div class="info-genre">
+                <h5><b>Имя: </b>{{_shared_service._selected_genre.name}}</h5>
+                <br>
+                <h5><b>Книги: </b></h5>
+                <ul class="genre-books-in-selected-genre">
+                    <li *ngFor="let book of _shared_service._selected_genre.genreBook" (click)="check_book(book.bookID)">
+                        {{book.bookTitle}}
+                    </li>
+                </ul>
+            </div>
+            <div class="management_author">
+                <div class="management">
+                    <a class="updade_genre_style" *ngIf="_shared_service._is_authorized && _shared_service._is_admin"
+                        routerLink="update" routerlinkactive="active">
+                        <h4>Редактировать</h4>
+                    </a>
+                    <button class="delete_genre_style"
+                        *ngIf="_shared_service._is_authorized && _shared_service._is_admin"
+                        (click)="turn_genre_delete_page(_shared_service._selected_genre)">
+                        <h4>Удалить</h4>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

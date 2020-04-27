@@ -1,0 +1,12 @@
+<div class="authorization-block">
+        <a routerLink="/login" routerlinkactive="active" *ngIf="!_shared_service._is_authorized">
+                <h4>Логин</h4>
+        </a>
+        <a routerLink="/register" routerlinkactive="active" *ngIf="!_shared_service._is_authorized">
+                <h4>Регистрация</h4>
+        </a>
+        <a *ngIf="_shared_service._is_authorized" style="padding-top:24px">{{_shared_service._user_email}}</a>
+        <a (click)="logout()" *ngIf="_shared_service._is_authorized">
+                <h4>Выйти</h4>
+        </a>
+</div>

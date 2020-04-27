@@ -1,0 +1,189 @@
+.get-all-authors {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.without-author {
+    margin: 0 0 2em 30%;
+}
+
+.author-get-all {
+    list-style-type: none;
+    margin-left: 2em;
+    padding: 0;
+    width: 400px;
+}
+
+.author-get-all li {
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    background-color: #EEE;
+    margin: .5em .5em .5em .5em;
+    padding: .3em 0;
+    height: auto;
+    border-radius: 4px;
+    -o-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.author-get-all li:hover {
+    left: .1em;
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.author-get-all li.selected {
+    background-color: #c6bcb6;
+    color: white;
+}
+
+.author-books li {
+    list-style-type: none;
+    cursor: pointer;
+    position: relative;
+    background-color: #563f46;
+    color: white;
+    height: auto;
+    border-radius: 4px;
+}
+
+.author-books li:hover {
+    background-color: #CCC;
+    left: .1em;
+}
+
+.author-books li.selected {
+    background-color: #BBD8DC;
+    color: white;
+}
+
+.with-author {
+    width: 30%;
+    display: table-cell;
+}
+
+.authors {
+    margin-top: 0;
+    padding-top: 0;
+    width: 100%;
+    height: 100%;
+    offset: 0;
+}
+
+.selected-author {
+    display: table-cell;
+    width: 60%;
+}
+
+.selected-author .author {
+    margin-top: -23px;
+    width: 60%;
+    height: 60%;
+    background: #EEE;
+    display: table;
+    position: absolute;
+}
+
+.info-author {
+    padding: 20px 0 0 10px;
+    height: 100%;
+    width: 60%;
+    display: table-cell;
+}
+
+.author-books-in-selected-author li {
+    width: 60%;
+    list-style-type: none;
+    cursor: pointer;
+    position: relative;
+    margin: .5em .5em .5em .5em;
+    padding: .3em 0;
+    background-color: #563f46;
+    color: white;
+    height: auto;
+    border-radius: 4px;
+}
+
+.author-books-in-selected-author li:hover {
+    left: .1em;
+}
+
+.author-books-in-selected-author li.selected {
+    background-color: #563f46;
+    color: white;
+}
+
+.author-books-in-selected-author li {
+    width: 60%;
+    list-style-type: none;
+    cursor: pointer;
+    position: relative;
+    margin: .5em .5em .5em .5em;
+    padding: .3em 0;
+    background-color: #563f46;
+    height: auto;
+    border-radius: 4px;
+}
+
+.updade_author_style {
+    white-space: nowrap;
+    -o-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color: gray;
+    background: white;
+    width: 200px;
+    height: 100px;
+    margin-top: 20px;
+}
+
+.updade_author_style:hover {
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.updade_author_style h4 {
+    margin-top: 15%;
+}
+
+.delete_author_style {
+    white-space: nowrap;
+    -o-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color: gray;
+    background: white;
+    width: 200px;
+    height: 100px;
+    margin-top: 50px;
+}
+
+.delete_author_style:hover {
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}

@@ -1,0 +1,49 @@
+<div class="user-basket-page" *ngIf="_shared_service._is_authorized && !_shared_service._is_admin">
+
+    <div class="without-basket-book" *ngIf="!_is_show_basket_book">
+        <label>
+            <h2>Корзина</h2>
+        </label>
+        <ul class="basket-book-get-all">
+            <li *ngFor="let book of _shared_service._current_user.userBasket" (click)="check_basket_book(book.bookID)">
+                {{book.bookTitle}}
+            </li>
+        </ul>
+    </div>
+
+    <div class="with-basket-book" *ngIf="_is_show_basket_book">
+        <div class="basket-books">
+            <label>
+                <h2>Корзина</h2>
+            </label>
+            <ul class="basket-book-get-all">
+                <li *ngFor="let book of _shared_service._current_user.userBasket"
+                    (click)="check_basket_book(book.bookID)">
+                    {{book.bookTitle}}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="selected-basket-book" *ngIf="_is_show_basket_book">
+        <div class="basket-book">
+            <div class="info-basket-book">
+                <h5><b>Название: </b>{{_current_user_basket_book.title}}</h5>
+                <br>
+                <h5><b>Цена: </b>{{_current_user_basket_book.price}}</h5>
+            </div>
+            <div class="management-basket-book">
+                <button (click)="pay()" class="buy_book_style"
+                    *ngIf="_shared_service._is_authorized && !_shared_service._is_admin">
+                    <h4>Купить</h4>
+                </button>
+                <button class="delete_basket_book_style"
+                    *ngIf="_shared_service._is_authorized && !_shared_service._is_admin"
+                    (click)="delete_ordered_book(_current_user_basket_book)">
+                    <h4>Удалить</h4>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>

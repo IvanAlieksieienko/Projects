@@ -1,0 +1,17 @@
+<div class="login-group">
+        <div class="form-group">
+                <label>Логин</label>
+                <br>
+                <label>EMAIL</label>
+                <br>
+                <input [(ngModel)]="_login_model.email" class="field" />
+                <br>
+                <label>Пароль</label>
+                <br>
+                <input [(ngModel)]="_login_model.password" class="field" type="password" />
+                <br>
+                <form>
+                        <input type="button" value="Отправить" (click)="login()" class="send-button">
+                </form>
+        </div>
+</div>

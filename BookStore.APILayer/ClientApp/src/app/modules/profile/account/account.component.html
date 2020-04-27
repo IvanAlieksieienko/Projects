@@ -1,0 +1,50 @@
+<div class="admin-profile-page" *ngIf="_shared_service._is_authorized && _shared_service._is_admin">
+
+    <div class="admin-info">
+        <label>Email: {{_shared_service._user_email}}</label>
+        <br>
+        <label>Password: {{_shared_service._user_password}}</label>
+    </div>
+
+    <div class="admin-management-profile">
+        <a routerLink="update" routerlinkactive="active">
+            <h4>Редактировать</h4>
+        </a>
+        <br>
+        <input type="button" value="Удалить" (click)="delete_user_profile()">
+    </div>
+
+</div>
+
+<div class="user-profile-page" *ngIf="_shared_service._is_authorized && !_shared_service._is_admin">
+
+    <div class="current-user-info">
+        <label>Email: {{_shared_service._user_email}}</label>
+        <br>
+        <label>Password: {{_shared_service._user_password}}</label>
+        <br>
+        <label>Корзина:</label>
+        <ul>
+            <li *ngFor="let book of _shared_service._current_user.userBasket" (click)="check_book(book.bookID)">
+                {{book.bookTitle}}
+            </li>
+        </ul>
+        <label>Покупки:</label>
+        <ul>
+            <li *ngFor="let book of _shared_service._current_user.userBook" (click)="check_book(book.bookID)">
+                {{book.bookTitle}}
+            </li>
+        </ul>
+        <label *ngIf="_shared_service._current_user.confirmed">Подтверждено</label>
+        <label *ngIf="!_shared_service._current_user.confirmed">Ожидает подтверждения</label>
+    </div>
+
+    <div class="user-management-profile">
+        <a routerLink="update" routerlinkactive="active">
+            <h4>Редактировать</h4>
+        </a>
+        <br>
+        <input type="button" value="Удалить" (click)="delete_user_profile()">
+    </div>
+
+</div>

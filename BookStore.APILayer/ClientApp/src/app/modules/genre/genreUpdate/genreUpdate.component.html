@@ -1,0 +1,15 @@
+<div class="genre-update-page">
+
+    <div class="genre-add-group-update">
+        <label>Изменение жанра</label>
+        <br>
+        <label>Название</label>
+        <br>
+        <input [(ngModel)]="_new_genre.Name" class="field_genre_update" placeholder="New genre name..." />
+        <br>
+        <form>
+            <input type="button" value="Отправить" (click)="update_genre()" class="send-genre-button-update">
+        </form>
+    </div>
+
+</div>
