@@ -1,0 +1,16 @@
+N:\Work\SERP\SERP.Core\bin\Debug\netcoreapp3.1\SERP.Core.deps.json
+N:\Work\SERP\SERP.Core\bin\Debug\netcoreapp3.1\SERP.Core.dll
+N:\Work\SERP\SERP.Core\bin\Debug\netcoreapp3.1\SERP.Core.pdb
+N:\Work\SERP\SERP.Core\obj\Debug\netcoreapp3.1\SERP.Core.AssemblyInfoInputs.cache
+N:\Work\SERP\SERP.Core\obj\Debug\netcoreapp3.1\SERP.Core.AssemblyInfo.cs
+N:\Work\SERP\SERP.Core\obj\Debug\netcoreapp3.1\SERP.Core.dll
+N:\Work\SERP\SERP.Core\obj\Debug\netcoreapp3.1\SERP.Core.pdb
+E:\Work\SERP\SERP.Core\bin\Debug\netcoreapp3.1\SERP.Core.deps.json
+E:\Work\SERP\SERP.Core\bin\Debug\netcoreapp3.1\SERP.Core.dll
+E:\Work\SERP\SERP.Core\bin\Debug\netcoreapp3.1\SERP.Core.pdb
+E:\Work\SERP\SERP.Core\obj\Debug\netcoreapp3.1\SERP.Core.csprojAssemblyReference.cache
+E:\Work\SERP\SERP.Core\obj\Debug\netcoreapp3.1\SERP.Core.csproj.CoreCompileInputs.cache
+E:\Work\SERP\SERP.Core\obj\Debug\netcoreapp3.1\SERP.Core.AssemblyInfoInputs.cache
+E:\Work\SERP\SERP.Core\obj\Debug\netcoreapp3.1\SERP.Core.AssemblyInfo.cs
+E:\Work\SERP\SERP.Core\obj\Debug\netcoreapp3.1\SERP.Core.dll
+E:\Work\SERP\SERP.Core\obj\Debug\netcoreapp3.1\SERP.Core.pdb
