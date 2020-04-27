@@ -1,0 +1,190 @@
+﻿html {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0px;
+    min-height: 100%;
+    width: 100%;
+    background: #F2F2F2;
+}
+
+.main {
+    height: 720px;
+    width: 50%;
+    margin: auto;
+    background: #252326;
+}
+
+#allChats {
+    width: 50%;
+    margin: 0px auto -20px auto;
+    height: 260px;
+    background: #A66F6F;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 25px;
+    color: white;
+}
+
+#allChatsLabel {
+    text-align: center;
+    margin: 0px 0px 0px 0px;
+}
+
+#loginBlock {
+    display: inline-block;
+    margin-top: 120px;
+    text-align: center;
+    width: 100%;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 40px;
+    color: white;
+}
+
+#loginBlock #txtUserName {
+    display: inline-block;
+    font-family: 'Righteous', cursive;
+    font-size: 20px;
+    text-align: center;
+}
+
+#loginBlock #btnLogin {
+    width: 238px;
+    height: 40px;
+    display: inline-block;
+    font-family: 'Righteous', cursive;
+    font-size: 20px;
+    background: #F2F2F2;
+    border: 0px solid white;
+    border-radius: 15px;
+    transition: all 0.5s;
+}
+
+#loginBlock #btnLogin:hover {
+    background: #A66F6F;
+    cursor: pointer;
+}
+
+#chatList input {
+    margin-top: 5px;
+    margin-left: 10px;
+    width: 150px;
+    height: 40px;
+    display: inline-block;
+    font-family: 'Righteous', cursive;
+    font-size: 20px;
+    background: #F2F2F2;
+    border: 0px solid white;
+    border-radius: 15px;
+    transition: all 0.5s;
+}
+
+#chatList input:hover {
+    background: #A66F6F;
+    cursor: pointer;
+}
+
+#chatList #newChatName {
+    margin-top: 5px;
+    margin-left: 10px;
+    width: 150px;
+    height: 40px;
+    display: inline-block;
+    font-family: 'Righteous', cursive;
+    font-size: 20px;
+    border: none;
+    border-radius: 0px;
+}
+
+#chatList #newChatName:hover {
+    cursor: text;
+    background: #F2F2F2;
+}
+
+#chatRoomName {
+    text-align: center;
+    margin: 20px 0px 0px 0px;
+    position: absolute;
+    top: 165px;
+    width: 50%;
+}
+
+#header {
+    display: inline-block;
+    margin-top: 20px;
+    width: 100%;
+}
+
+#header h3 {
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 25px;
+    color: white;
+}
+
+#message {
+    display: block;
+    width: 99.6%;
+    resize: none;
+    height: 75px;
+    font-family: 'Righteous', cursive;
+    font-size: 20px;
+    border: none;
+    border-radius: 0px;
+    word-break: break-word;
+    text-align: center;
+}
+
+#message:hover {
+    cursor: text;
+}
+
+#sendmessage {
+    display: block;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    height: 40px;
+    font-family: 'Righteous', cursive;
+    font-size: 20px;
+    background: #F2F2F2;
+    border: 0px solid white;
+    border-radius: 15px;
+    transition: all 0.5s;
+}
+
+#sendmessage:hover {
+    background: #A66F6F;
+    cursor: pointer;
+}
+
+#chatUsers {
+    margin-top: 25px;
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 25px;
+    color: white;
+    height: 192px;
+    overflow-y: scroll;
+}
+
+#chatUsers p {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+#chatArea {
+    text-align: center;
+    font-family: 'Righteous', cursive;
+    font-size: 20px;
+    color: white;
+    height: 250px;
+    overflow-y: scroll;
+}
+
+#chatBody hr {
+    margin-top: 20px;
+}

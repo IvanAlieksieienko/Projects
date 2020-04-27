@@ -1,0 +1,55 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="~/Content/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Righteous&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="allChats">
+        <h2 id="allChatsLabel"><b>All chat rooms:</b></h2>
+        <div id="chatList">
+
+        </div>
+        <h2 id="chatRoomName">Чат-комната</h2>
+    </div>
+
+    
+
+    <div class="main">
+        <div id="loginBlock">
+            Login:<br />
+            <input id="txtUserName" type="text" />
+            <br />
+            <input id="btnLogin" type="button" value="apply" />
+        </div>
+        <div id="chatBody">
+            <div id="header"></div>
+            <div id="inputForm">
+                <textarea type="text" id="message" rows="4" cols="100" maxlength="500"></textarea>
+                <input type="button" id="sendmessage" value="send" />
+            </div>
+
+            <div id="chatArea">
+
+            </div>
+            <hr />
+            <div id="chatUsers">
+
+            </div>
+        </div>
+        <input id="hdId" hidden/>
+        <input id="username" hidden/>
+    </div>
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <!--Ссылка на библиотеку SignalR -->
+    <script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
+    <!--Ссылка на автоматически сгенерированный скрипт хаба SignalR -->
+    <script src="~/signalr/hubs"></script>
+    <script src="~/Scripts/util.js"></script>
+</body>
+</html>
