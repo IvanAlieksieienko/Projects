@@ -1,0 +1,96 @@
+.side {
+    height: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.side a,
+button {
+    text-decoration: none;
+}
+
+.side .controll {
+    height: 150px;
+}
+
+.side .controll a {
+    margin-top: 15px;
+}
+
+.side .controll-without-create-button {
+    height: 70px;
+}
+
+.side .categories {
+    height: calc(100% - 150px);
+    overflow-y: auto;
+    border-bottom: 1px dashed #55C34D;
+}
+
+.side .controll-without-create-button a {
+    margin-top: 10px;
+}
+
+.side .categories-without-create-button {
+    height: calc(100% - 70px);
+    overflow-y: auto;
+    border-bottom: 1px dashed #55C34D;
+}
+
+.side-no-categories {
+    height: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.side-no-categories span {
+    display: block;
+    width: 100%;
+    height: calc(100% - 70px);
+    text-align: center;
+    font-size: 1.7em;
+    padding-top: 100%;
+}
+
+.btn-white {
+    text-align: left;
+    font-size: 1.7em;
+    border-radius: 0px;
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    z-index: 1001;
+    padding: 6px 12px 6px 12px;
+}
+
+.btn-white:hover {
+    position: relative;
+    z-index: 1002;
+}
+
+.btn-green {
+    font-size: 1.6em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    display: block;
+    height: 50px;
+    width: 90%;
+    padding: 6px 12px 6px 12px;
+    margin-left: 5%;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    border-bottom: 1px solid #55C34D;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #55C34D;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(47, 107, 42);
+    cursor: pointer;
+}

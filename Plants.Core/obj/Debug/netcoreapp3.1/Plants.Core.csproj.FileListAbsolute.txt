@@ -1,0 +1,26 @@
+N:\Work\Plants\Plants.Core\bin\Debug\netcoreapp3.1\Plants.Core.deps.json
+N:\Work\Plants\Plants.Core\bin\Debug\netcoreapp3.1\Plants.Core.dll
+N:\Work\Plants\Plants.Core\bin\Debug\netcoreapp3.1\Plants.Core.pdb
+N:\Work\Plants\Plants.Core\obj\Debug\netcoreapp3.1\Plants.Core.AssemblyInfoInputs.cache
+N:\Work\Plants\Plants.Core\obj\Debug\netcoreapp3.1\Plants.Core.AssemblyInfo.cs
+N:\Work\Plants\Plants.Core\obj\Debug\netcoreapp3.1\Plants.Core.dll
+N:\Work\Plants\Plants.Core\obj\Debug\netcoreapp3.1\Plants.Core.pdb
+N:\Work\Plants\Plants.Core\obj\Debug\netcoreapp3.1\Plants.Core.csprojAssemblyReference.cache
+E:\Work\Plants\Plants.Core\bin\Debug\netcoreapp3.1\Plants.Core.deps.json
+E:\Work\Plants\Plants.Core\bin\Debug\netcoreapp3.1\Plants.Core.dll
+E:\Work\Plants\Plants.Core\bin\Debug\netcoreapp3.1\Plants.Core.pdb
+E:\Work\Plants\Plants.Core\obj\Debug\netcoreapp3.1\Plants.Core.csproj.CoreCompileInputs.cache
+E:\Work\Plants\Plants.Core\obj\Debug\netcoreapp3.1\Plants.Core.AssemblyInfoInputs.cache
+E:\Work\Plants\Plants.Core\obj\Debug\netcoreapp3.1\Plants.Core.AssemblyInfo.cs
+E:\Work\Plants\Plants.Core\obj\Debug\netcoreapp3.1\Plants.Core.dll
+E:\Work\Plants\Plants.Core\obj\Debug\netcoreapp3.1\Plants.Core.pdb
+E:\Work\Plants\Plants.Core\obj\Debug\netcoreapp3.1\Plants.Core.csprojAssemblyReference.cache
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Core\bin\Debug\netcoreapp3.1\Plants.Core.deps.json
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Core\bin\Debug\netcoreapp3.1\Plants.Core.dll
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Core\bin\Debug\netcoreapp3.1\Plants.Core.pdb
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Core\obj\Debug\netcoreapp3.1\Plants.Core.csproj.CoreCompileInputs.cache
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Core\obj\Debug\netcoreapp3.1\Plants.Core.AssemblyInfoInputs.cache
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Core\obj\Debug\netcoreapp3.1\Plants.Core.AssemblyInfo.cs
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Core\obj\Debug\netcoreapp3.1\Plants.Core.dll
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Core\obj\Debug\netcoreapp3.1\Plants.Core.pdb
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Core\obj\Debug\netcoreapp3.1\Plants.Core.csprojAssemblyReference.cache

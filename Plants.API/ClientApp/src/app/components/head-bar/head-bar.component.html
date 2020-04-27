@@ -1,0 +1,17 @@
+<div class="head">
+    <div class="icon">
+        <a routerLink="">
+            <fa-icon [icon]="mainIcon" size="3x" [styles]="{'color':'#55C34D'}"></fa-icon>
+        </a>
+        <a routerLink=""><span>СЛАДКИЙ САД</span></a>
+    </div>
+    <div class="links">
+        <button class="btn-white sidebar not" *ngIf="!_sharedService._isSideBarHidden" (click)="sideBar()">КАТЕГОРИИ</button>
+        <button class="btn-green sidebar yes" *ngIf="_sharedService._isSideBarHidden" (click)="sideBar()">КАТЕГОРИИ</button>
+        <a class="btn-white categories" routerLink="category">КАТЕГОРИИ</a>
+        <a class="btn-white" routerLink="about">О НАС</a>
+        <a class="btn-white" routerLink="contact">КОНТАКТЫ</a>
+        <a class="btn-white" routerLink="login" *ngIf="!_sharedService._isAuthenticated">ВОЙТИ</a>
+        <button class="btn-white" (click)="logout()" *ngIf="_sharedService._isAuthenticated">ВЫЙТИ</button>
+    </div>
+</div>

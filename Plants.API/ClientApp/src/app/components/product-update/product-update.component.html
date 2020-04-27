@@ -1,0 +1,35 @@
+<div class="main-area">
+    <div class="inputs">
+        <input class="name" type="text" [(ngModel)]="model.name" placeholder="имя продукта...">
+        <button class="btn-white" *ngIf="!model.isAvailable" (click)="turnAvailabless()">Нет в наличии</button>
+        <button class="btn-green" *ngIf="model.isAvailable" (click)="turnAvailabless()">Есть в наличии</button>
+        <textarea class="description" [(ngModel)]="model.description" placeholder="описание..."></textarea>
+
+    </div>
+    <div class="inputs-image">
+        <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{choosedCategory.name}}</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <ng-container *ngFor="let category of categories; index as i">
+                    <button ngbDropdownItem (click)="chooseCategory(category)">{{category.name}}</button>
+                </ng-container>
+            </div>
+            <br>
+        </div>
+        <div class="form-group">
+            <label class="label">
+				<fa-icon class="material-icons" [icon]="icon" size="2x"></fa-icon>
+				<span class="title">ДОБАВИТЬ ФАЙЛ</span>
+				<input type="file" (change)="onSelectFile($event)">
+			</label>
+        </div>
+        <div class="image-default" (click)="showImage(model.imagePath)" title="Нажмите, чтобы посмотреть полное изображение">
+            <img [src]="model.imagePath">
+        </div>
+        <button class="btn-white" (click)="add()">ДОБАВИТЬ</button>
+    </div>
+</div>
+
+<div class="image-full-view" *ngIf="_isShowFullImage" (click)="closeImageView()" title="Нажмите, чтобы закрыть просмотр изображения">
+    <img [src]="_fullImagePath">
+</div>

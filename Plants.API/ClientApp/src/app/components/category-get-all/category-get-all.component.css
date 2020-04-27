@@ -1,0 +1,133 @@
+.category-products {}
+
+.category-products .div-for-create-button {
+    width: 100%;
+}
+
+.category-products .category {
+    margin-top: 25px;
+    display: inline-block;
+    margin-left: 50px;
+    width: 200px;
+    height: 320px;
+    background: white;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.category-products .category:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.category-products .category .image-default {
+    width: 100%;
+    height: 266px;
+}
+
+.category-products .category img {}
+
+.category-products .category span {
+    display: table-cell;
+    width: 200px;
+    height: 55px;
+    font-size: 1.1em;
+    line-height: normal;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.category-products .btn-green {
+    padding: 6px 12px;
+    font-size: 1.8em;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 5%;
+    margin-top: 15px;
+}
+
+.category-products .btn-white {
+    padding: 6px 12px;
+    font-size: 1.8em;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 5%;
+    margin-top: 15px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.category-products .div-for-create-button .update {}
+
+.category-products .div-for-create-button .delete {}
+
+.category-products .div-for-create-button .create {}
+
+.category-products .category-delete {
+    margin-top: 25px;
+    display: inline-block;
+    margin-left: 50px;
+    width: 200px;
+    height: 320px;
+    background: #55C34D;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.category-products .category-delete:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.category-products .category-delete .image-default {
+    width: 100%;
+    height: 266px;
+}
+
+.category-products .category-delete img {}
+
+.category-products .category-delete span {
+    display: table-cell;
+    width: 200px;
+    height: 55px;
+    font-size: 1.1em;
+    line-height: normal;
+    text-align: center;
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 768px) {
+    .category-products .btn-white {
+        padding: 6px 12px;
+        font-size: 1em;
+        text-decoration: none;
+        display: inline-block;
+        margin-left: 5%;
+        margin-top: 15px;
+    }
+    .category-products .btn-green {
+        padding: 6px 12px;
+        font-size: 1em;
+        text-decoration: none;
+        display: inline-block;
+        margin-left: 5%;
+        margin-top: 15px;
+    }
+    .category-products .category-delete span {
+        display: table-cell;
+        width: 200px;
+        height: 55px;
+        font-size: 1em;
+        line-height: normal;
+        text-align: center;
+        vertical-align: middle;
+    }
+    .category-products .category span {
+        display: table-cell;
+        width: 200px;
+        height: 55px;
+        font-size: 1em;
+        line-height: normal;
+        text-align: center;
+        vertical-align: middle;
+    }
+}

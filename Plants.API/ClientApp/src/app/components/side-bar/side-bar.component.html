@@ -1,0 +1,18 @@
+<div class="side" *ngIf="_isShowCategories">
+
+    <div class="categories" [ngClass]="{'categories-without-create-button':_sharedService._isAuthenticated==false}">
+        <ng-container *ngFor="let category of _categories">
+            <button class="btn-white" (click)="checkCategory(category)">{{category.name}}</button>
+        </ng-container>
+    </div>
+    <div class="controll" [ngClass]="{'controll-without-create-button':_sharedService._isAuthenticated==false}">
+        <a class="btn-green" 
+            routerLink="category">ВСЕ</a>
+        <a class="btn-green" routerLink="category/create" *ngIf="_sharedService._isAuthenticated">СОЗДАТЬ</a>
+    </div>
+</div>
+
+<div class="side-no-categories" *ngIf="!_isShowCategories">
+    <span>Здесь пока нет категорий</span>
+    <a class="btn-green" routerLink="category/create" *ngIf="_sharedService._isAuthenticated">СОЗДАТЬ</a>
+</div>

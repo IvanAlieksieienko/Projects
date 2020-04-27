@@ -1,0 +1,35 @@
+N:\Work\Plants\Plants.Infrastructure\bin\Debug\netcoreapp3.1\Plants.Core.dll
+N:\Work\Plants\Plants.Infrastructure\obj\Debug\netcoreapp3.1\Plants.Infrastructure.csprojAssemblyReference.cache
+N:\Work\Plants\Plants.Infrastructure\obj\Debug\netcoreapp3.1\Plants.Infrastructure.AssemblyInfoInputs.cache
+N:\Work\Plants\Plants.Infrastructure\obj\Debug\netcoreapp3.1\Plants.Infrastructure.AssemblyInfo.cs
+N:\Work\Plants\Plants.Infrastructure\bin\Debug\netcoreapp3.1\Plants.Infrastructure.deps.json
+N:\Work\Plants\Plants.Infrastructure\bin\Debug\netcoreapp3.1\Plants.Infrastructure.dll
+N:\Work\Plants\Plants.Infrastructure\bin\Debug\netcoreapp3.1\Plants.Infrastructure.pdb
+N:\Work\Plants\Plants.Infrastructure\bin\Debug\netcoreapp3.1\Plants.Core.pdb
+N:\Work\Plants\Plants.Infrastructure\obj\Debug\netcoreapp3.1\Plants.Infrastructure.csproj.CopyComplete
+N:\Work\Plants\Plants.Infrastructure\obj\Debug\netcoreapp3.1\Plants.Infrastructure.dll
+N:\Work\Plants\Plants.Infrastructure\obj\Debug\netcoreapp3.1\Plants.Infrastructure.pdb
+E:\Work\Plants\Plants.Infrastructure\bin\Debug\netcoreapp3.1\Plants.Infrastructure.deps.json
+E:\Work\Plants\Plants.Infrastructure\bin\Debug\netcoreapp3.1\Plants.Infrastructure.dll
+E:\Work\Plants\Plants.Infrastructure\bin\Debug\netcoreapp3.1\Plants.Infrastructure.pdb
+E:\Work\Plants\Plants.Infrastructure\bin\Debug\netcoreapp3.1\Plants.Core.dll
+E:\Work\Plants\Plants.Infrastructure\bin\Debug\netcoreapp3.1\Plants.Core.pdb
+E:\Work\Plants\Plants.Infrastructure\obj\Debug\netcoreapp3.1\Plants.Infrastructure.csprojAssemblyReference.cache
+E:\Work\Plants\Plants.Infrastructure\obj\Debug\netcoreapp3.1\Plants.Infrastructure.csproj.CoreCompileInputs.cache
+E:\Work\Plants\Plants.Infrastructure\obj\Debug\netcoreapp3.1\Plants.Infrastructure.AssemblyInfoInputs.cache
+E:\Work\Plants\Plants.Infrastructure\obj\Debug\netcoreapp3.1\Plants.Infrastructure.AssemblyInfo.cs
+E:\Work\Plants\Plants.Infrastructure\obj\Debug\netcoreapp3.1\Plants.Infrastructure.csproj.CopyComplete
+E:\Work\Plants\Plants.Infrastructure\obj\Debug\netcoreapp3.1\Plants.Infrastructure.dll
+E:\Work\Plants\Plants.Infrastructure\obj\Debug\netcoreapp3.1\Plants.Infrastructure.pdb
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Infrastructure\bin\Debug\netcoreapp3.1\Plants.Infrastructure.deps.json
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Infrastructure\bin\Debug\netcoreapp3.1\Plants.Infrastructure.dll
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Infrastructure\bin\Debug\netcoreapp3.1\Plants.Infrastructure.pdb
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Infrastructure\bin\Debug\netcoreapp3.1\Plants.Core.dll
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Infrastructure\bin\Debug\netcoreapp3.1\Plants.Core.pdb
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Infrastructure\obj\Debug\netcoreapp3.1\Plants.Infrastructure.csprojAssemblyReference.cache
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Infrastructure\obj\Debug\netcoreapp3.1\Plants.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Infrastructure\obj\Debug\netcoreapp3.1\Plants.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Infrastructure\obj\Debug\netcoreapp3.1\Plants.Infrastructure.AssemblyInfo.cs
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Infrastructure\obj\Debug\netcoreapp3.1\Plants.Infrastructure.csproj.CopyComplete
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Infrastructure\obj\Debug\netcoreapp3.1\Plants.Infrastructure.dll
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Infrastructure\obj\Debug\netcoreapp3.1\Plants.Infrastructure.pdb

@@ -1,0 +1,51 @@
+<div class="category-description">
+    <button class="btn-white" (click)="backToCategories()">
+        <fa-icon [icon]="icon" size="1x"></fa-icon>
+        <span>Назад</span>
+    </button>
+    <div class="text-description">
+        <h1>{{category.name}}</h1>
+        <h4>{{category.description}}</h4>
+    </div>
+    <div class="image-description">
+        <div class="image-default" (click)="showImage(category.imagePath)" title="Нажмите, чтобы посмотреть полное изображение">
+            <img [src]="category.imagePath">
+        </div>
+    </div>
+
+</div>
+<div class="category-products">
+    <div class="div-for-create-button" *ngIf="_sharedService._isAuthenticated">
+        <button class="btn-green update" (click)="updateCategory()" *ngIf="_sharedService._isAuthenticated" title="Изменить эту категорию">ИЗМЕНИТЬ</button>
+        <button class="btn-green delete" (click)="deleteCategory()" *ngIf="_sharedService._isAuthenticated" title="Удалить эту категорию">УДАЛИТЬ</button>
+        <button class="btn-green delete" (click)="deleteProductsMode()" *ngIf="_sharedService._isAuthenticated && !_deleteMode" title="Войти в режим удаления">УДАЛИТЬ ПРОДУКТЫ</button>
+        <button class="btn-white delete" (click)="deleteProductsMode()" *ngIf="_sharedService._isAuthenticated && _deleteMode" title="Выйти из режима удаления">УДАЛИТЬ ПРОДУКТЫ</button>
+        <button class="btn-green create" (click)="createProduct()" *ngIf="_sharedService._isAuthenticated && !_deleteMode" title="Создать продукт">СОЗДАТЬ</button>
+        <button class="btn-white create" (click)="deleteList()" *ngIf="_sharedService._isAuthenticated && _deleteMode" title="Удалить выбранное">УДАЛИТЬ ВЫБРАННОЕ</button>
+    </div>
+    <ng-container *ngFor="let product of products; index as i">
+        <div class="product" *ngIf="!_deleteMode" (click)="checkProduct(product)">
+            <div class="image-default">
+                <img [src]="product.imagePath">
+            </div>
+            <span>{{product.name}}</span>
+        </div>
+
+        <div class="product" *ngIf="_deleteMode && !_deleteList[i]" (click)="addProductToDeleteList(product)">
+            <div class="image-default">
+                <img [src]="product.imagePath">
+            </div>
+            <span>{{product.name}}</span>
+        </div>
+        <div class="product-delete" *ngIf="_deleteMode && _deleteList[i]" (click)="removeProductFromDeleteList(product)">
+            <div class="image-default">
+                <img [src]="product.imagePath">
+            </div>
+            <span>{{product.name}}</span>
+        </div>
+    </ng-container>
+</div>
+
+<div class="image-full-view" *ngIf="_isShowFullImage" (click)="closeImageView()" title="Нажмите, чтобы закрыть просмотр изображения">
+    <img [src]="_fullImagePath">
+</div>

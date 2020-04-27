@@ -1,0 +1,9 @@
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Core\bin\Release\netcoreapp3.1\Plants.Core.deps.json
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Core\bin\Release\netcoreapp3.1\Plants.Core.dll
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Core\bin\Release\netcoreapp3.1\Plants.Core.pdb
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Core\obj\Release\netcoreapp3.1\Plants.Core.csprojAssemblyReference.cache
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Core\obj\Release\netcoreapp3.1\Plants.Core.csproj.CoreCompileInputs.cache
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Core\obj\Release\netcoreapp3.1\Plants.Core.AssemblyInfoInputs.cache
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Core\obj\Release\netcoreapp3.1\Plants.Core.AssemblyInfo.cs
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Core\obj\Release\netcoreapp3.1\Plants.Core.dll
+C:\Users\alexe\OneDrive\Рабочий стол\Plants\Plants.Core\obj\Release\netcoreapp3.1\Plants.Core.pdb

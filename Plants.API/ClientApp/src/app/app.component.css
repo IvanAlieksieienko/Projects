@@ -1,0 +1,116 @@
+head-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 125px;
+    z-index: 1000;
+    background: white;
+}
+
+side-bar {
+    position: fixed;
+    height: calc(100% - 125px);
+    width: 15%;
+    top: 125px;
+    z-index: 999;
+    background: white;
+}
+
+.router-outlet {
+    position: absolute;
+    overflow-y: auto;
+    top: 125px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 125px);
+}
+
+@media screen and (max-width: 1400px) {
+    head-bar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 125px;
+        z-index: 1000;
+        background: white;
+    }
+    side-bar {
+        position: fixed;
+        height: calc(100% - 125px);
+        width: 25%;
+        top: 125px;
+        z-index: 999;
+        background: white;
+    }
+    .router-outlet {
+        position: absolute;
+        overflow-y: auto;
+        top: 125px;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 125px);
+    }
+}
+
+@media screen and (max-width: 875px) {
+    head-bar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 140px;
+        z-index: 1000;
+        background: white;
+    }
+    side-bar {
+        position: fixed;
+        height: calc(100% - 140px);
+        width: 25%;
+        top: 140px;
+        z-index: 999;
+    }
+    .router-outlet {
+        position: absolute;
+        height: calc(100% - 140px);
+        left: 0;
+        width: 100%;
+        top: 140px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    head-bar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 140px;
+        z-index: 1000;
+        background: white;
+    }
+    side-bar {
+        visibility: hidden;
+    }
+    .router-outlet {
+        position: absolute;
+        top: 140px;
+        left: 0%;
+        width: 100%;
+        height: calc(100% - 140px);
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #55C34D;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(47, 107, 42);
+    cursor: pointer;
+}

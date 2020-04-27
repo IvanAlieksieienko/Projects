@@ -1,0 +1,102 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'bootstrap/dist/css/bootstrap-grid.min.css';
+
+/* Provide sufficient contrast against white background */
+
+button:focus,
+a:focus {
+    outline: none;
+}
+
+.btn-white {
+    transition: all 300ms cubic-bezier(0.77, 0, 0.175, 1);
+    border: none;
+    background: white;
+    border-radius: 3px;
+    text-align: center;
+    color: black;
+}
+
+.btn-white:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background: #55C34D;
+    color: white;
+}
+
+.btn-green {
+    transition: all 300ms cubic-bezier(0.77, 0, 0.175, 1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: none;
+    background: #55C34D;
+    border-radius: 3px;
+    text-align: center;
+    color: white;
+}
+
+.btn-green:hover {
+    background: white;
+    color: black;
+}
+
+.image-default {
+    overflow: hidden;
+}
+
+.image-default img {
+    width: 100%;
+    cursor: pointer;
+}
+
+.image-full-view {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 2001;
+    top: 0px;
+    left: 0px;
+    background: rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+}
+
+.image-full-view img {
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+ngb-carousel {
+    width: 100%;
+    max-width: 300px;
+    height: 45px;
+}
+
+.carousel-inner {
+    overflow: visible;
+    height: 45px;
+}
+
+.carousel-item {
+    /* Force to always be block */
+    display: block !important;
+    z-index: 1;
+    position: absolute;
+    transform: rotateX(90deg) scale(0.7);
+    opacity: 1;
+    transition: all 0.6s;
+    visibility: visible;
+}
+
+.carousel-item.active {
+    position: relative;
+    height: 45px;
+    z-index: 2000;
+    transform: rotateX(0deg);
+    visibility: visible;
+    opacity: 1;
+}

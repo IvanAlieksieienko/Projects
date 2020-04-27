@@ -1,0 +1,221 @@
+.main-area {
+    background: #55C34D;
+    width: 60%;
+    height: 600px;
+    margin-top: 5%;
+    margin-left: 15%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.main-area .inputs {
+    float: left;
+    width: 70%;
+    height: 70%;
+}
+
+.main-area .inputs input,
+textarea {
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 5%;
+    height: 15%;
+    font-size: 1.5em;
+    text-align: center;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.main-area .inputs .name {
+    margin-top: 10%;
+}
+
+.main-area .inputs .description {
+    height: 50%;
+    word-break: break-word;
+}
+
+.main-area .btn-white {
+    width: 56%;
+    margin-left: 7%;
+    height: 15%;
+    font-size: 1.5em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.main-area .btn-white:hover {
+    border: 1px solid white;
+}
+
+.main-area .inputs-image {
+    float: right;
+    width: 30%;
+    height: 70%;
+}
+
+.main-area .inputs-image input,
+.image-default {
+    display: block;
+    width: 100%;
+}
+
+.main-area .inputs-image input {
+    margin-top: 30%;
+}
+
+.main-area .inputs-image .image-default {
+    margin-top: 5%;
+    width: 204px;
+    height: 270px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.main-area .inputs-image .image-default img {}
+
+.main-area .inputs-image .form-group {
+    margin-top: 24%;
+    width: 120px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.main-area .inputs-image input[type=file] {
+    outline: 0;
+    opacity: 0;
+    pointer-events: none;
+    user-select: none
+}
+
+.main-area .inputs-image .label {
+    width: 120px;
+    height: 120px;
+    border: 1px solid white;
+    background: white;
+    display: block;
+    padding: 1.2em;
+    transition: all 600ms ease-in-out;
+    cursor: pointer;
+    text-align: center;
+}
+
+.main-area .inputs-image .label fa-icon {
+    display: block;
+    color: black;
+    transition: all 600ms ease-in-out;
+}
+
+.main-area .inputs-image .label .title {
+    display: block;
+    margin-top: 10px;
+    color: black;
+    transition: all 600ms ease-in-out;
+    font-weight: 500;
+}
+
+.main-area .inputs-image .label:hover {
+    background: #55C34D;
+    color: white;
+}
+
+.main-area .inputs-image .label:hover fa-icon,
+.main-area .inputs-image .label:hover .title {
+    color: white;
+}
+
+@media screen and (max-width: 1400px) {
+    .main-area {
+        background: #55C34D;
+        width: 80%;
+        height: 600px;
+        margin-top: 5%;
+        margin-left: 10%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .main-area .inputs-image .image-default {
+        margin-top: 5%;
+        width: 183px;
+        height: 243px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+}
+
+@media screen and (max-width: 1140px) {
+    .main-area {
+        background: #55C34D;
+        width: 80%;
+        height: 600px;
+        margin-top: 5%;
+        margin-left: 10%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .main-area .inputs-image .image-default {
+        margin-top: 5%;
+        width: 153px;
+        height: 202px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-area {
+        background: #55C34D;
+        width: 96%;
+        height: 500px;
+        margin-top: 5%;
+        margin-left: 2%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .main-area .inputs-image .image-default {
+        margin-top: 5%;
+        width: 90px;
+        height: 119px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .main-area .btn-white {
+        width: 56%;
+        margin-left: 7%;
+        height: 15%;
+        font-weight: 500;
+        font-size: 1em;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .main-area .inputs input,
+    textarea {
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: 5%;
+        height: 15%;
+        font-size: 1.2em;
+        text-align: center;
+        border: none;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .main-area .inputs-image .form-group {
+        margin-top: 24%;
+        width: 90px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .main-area .inputs-image .label {
+        width: 90px;
+        height: 90px;
+        border: 1px solid white;
+        background: white;
+        display: block;
+        padding: .6em;
+        transition: all 600ms ease-in-out;
+        cursor: pointer;
+        text-align: center;
+    }
+    .main-area .inputs-image .label fa-icon {
+        display: block;
+        color: black;
+        font-size: .8em;
+        transition: all 600ms ease-in-out;
+    }
+    .main-area .inputs-image .label .title {
+        display: block;
+        margin-top: 5px;
+        color: black;
+        font-size: .8em;
+        transition: all 600ms ease-in-out;
+        font-weight: 500;
+    }
+}

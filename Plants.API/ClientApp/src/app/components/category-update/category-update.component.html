@@ -1,0 +1,24 @@
+<div class="main-area">
+    <div class="inputs">
+        <input class="name" type="text" [(ngModel)]="category.name" placeholder="имя категории...">
+        <br>
+        <textarea class="description" [(ngModel)]="category.description" placeholder="описание..."></textarea>
+    </div>
+    <div class="inputs-image">
+        <div class="form-group">
+            <label class="label">
+				<fa-icon class="material-icons" [icon]="icon" size="2x"></fa-icon>
+				<span class="title">ДОБАВИТЬ ФАЙЛ</span>
+				<input type="file" (change)="onSelectFile($event)">
+			</label>
+        </div>
+        <div class="image-default" (click)="showImage(category.imagePath)" title="Нажмите, чтобы посмотреть полное изображение">
+            <img [src]="category.imagePath">
+        </div>
+    </div>
+    <button class="btn-white" (click)="update()">ИЗМЕНИТЬ</button>
+</div>
+
+<div class="image-full-view" *ngIf="_isShowFullImage" (click)="closeImageView()" title="Нажмите, чтобы закрыть просмотр изображения">
+    <img [src]="_fullImagePath">
+</div>

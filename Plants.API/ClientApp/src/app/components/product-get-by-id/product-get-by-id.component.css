@@ -1,0 +1,169 @@
+.back-to-category {
+    width: 100%;
+    height: 50px;
+}
+
+.back-to-category .btn-green {
+    padding: 6px 20px 6px 20px;
+    font-weight: 500;
+}
+
+.float-left {
+    float: left;
+}
+
+.back-to-category .float-left .btn-green {
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.back-to-category .float-left .btn-green span {
+    font-size: 1em;
+    margin-left: 10px;
+    text-transform: uppercase;
+}
+
+.float-right {
+    float: right;
+}
+
+.back-to-category .float-right .btn-green {
+    margin-right: 30px;
+    margin-top: 5px;
+}
+
+.product {
+    margin-top: 20px;
+}
+
+.product .float-left {
+    width: 60%;
+}
+
+.product .float-left h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.product .float-left .description {
+    width: 80%;
+    margin-left: 10%;
+    background: #55C34D;
+    color: white;
+    padding: 40px 10px 40px 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.product .float-left .description h5 {
+    width: 100%;
+    text-align: center;
+}
+
+.product .float-left .availability {
+    width: 60%;
+    height: 60px;
+    margin-left: 20%;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.product .float-left .yes {
+    background: #55C34D;
+    color: white;
+}
+
+.product .float-left .no {
+    background: white;
+    color: black;
+}
+
+.product .float-left .availability h4 {
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+}
+
+.product .float-right {
+    width: 40%;
+}
+
+.product .float-right .btn-green {
+    padding: 10px 20px 10px 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.product .float-right .btn-green:hover {
+    /* background: #55C34D;
+    color: white; */
+}
+
+.product .float-right .image-default {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    max-height: 400px;
+    margin-top: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 768px) {
+    .back-to-category .float-right .btn-green {
+        margin-right: 5px;
+        margin-top: 5px;
+    }
+    .back-to-category .btn-green {
+        padding: 5px 10px;
+        font-size: .8em;
+        font-weight: 500;
+    }
+    .product .float-left .description {
+        width: 90%;
+        margin-left: 5%;
+        background: #55C34D;
+        color: white;
+        padding: 40px 10px 40px 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .product .float-left h2 {
+        text-align: center;
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+    .product .float-left .description h5 {
+        width: 100%;
+        text-align: center;
+        font-size: 0.8em;
+    }
+    .product .float-right .btn-green {
+        padding: 5px 10px;
+        font-weight: 500;
+        font-size: .8em;
+        margin-bottom: 20px;
+        width: 95%;
+        max-width: 300px;
+    }
+    .product .float-left .availability {
+        width: 90%;
+        height: 60px;
+        margin-left: 5%;
+        margin-top: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .product .float-left .availability h4 {
+        text-align: center;
+        font-size: 1.2em;
+        height: 60px;
+        line-height: 60px;
+    }
+    .product .float-right .image-default {
+        width: 95%;
+        max-width: 300px;
+        height: auto;
+        max-height: 400px;
+        margin-top: -2px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+}

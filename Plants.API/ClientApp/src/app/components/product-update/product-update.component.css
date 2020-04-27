@@ -1,0 +1,314 @@
+.main-area {
+    background: #55C34D;
+    width: 70%;
+    height: 700px;
+    margin-top: 5%;
+    margin-left: 15%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.main-area .inputs {
+    float: left;
+    width: 60%;
+    height: 70%;
+}
+
+.main-area .inputs input,
+textarea {
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 5%;
+    height: 15%;
+    font-size: 1.5em;
+    text-align: center;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.main-area .inputs .name {
+    margin-top: 10%;
+}
+
+.main-area .inputs .btn-white {
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 5%;
+}
+
+.main-area .inputs .btn-green {
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 5%;
+    font-size: 1.5em;
+    height: 15%;
+    border: 1px solid white;
+}
+
+.main-area .inputs .btn-green:hover {
+    border: none;
+}
+
+.main-area .inputs .description {
+    height: 62%;
+    word-break: break-word;
+}
+
+.main-area .btn-white {
+    width: 56%;
+    margin-left: 7%;
+    height: 15%;
+    font-size: 1.5em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.main-area .btn-white:hover {
+    border: 1px solid white;
+}
+
+.main-area .inputs-image {
+    float: right;
+    width: 40%;
+    height: 70%;
+}
+
+.main-area .inputs-image .d-inline-block {
+    width: 90%;
+    height: 15%;
+    margin-top: 15%;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.main-area .d-inline-block .btn-outline-primary {
+    width: 100%;
+    font-size: 1.5em;
+    color: black;
+    height: 100%;
+    border: none;
+    background: white;
+    border-radius: 0px;
+    transition: all 300ms cubic-bezier(0.77, 0, 0.175, 1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.main-area .d-inline-block .btn-outline-primary:hover {
+    background: #55C34D;
+    border: 1px solid white;
+    color: white;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.main-area .d-inline-block .dropdown-menu {
+    padding: 0px;
+    border-radius: 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+
+.main-area .d-inline-block .dropdown-item {
+    color: black;
+    transition: all 100ms cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.main-area .d-inline-block .dropdown-item:hover {
+    background: #55C34D;
+    color: white;
+}
+
+.main-area .inputs-image input,
+.image-default {
+    display: block;
+    width: 100%;
+}
+
+.main-area .inputs-image input {
+    margin-top: 30%;
+}
+
+.main-area .inputs-image .image-default {
+    float: right;
+    margin-top: 7%;
+    margin-right: 10%;
+    width: 204px;
+    height: 270px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.main-area .inputs-image .form-group {
+    float: left;
+    margin-top: 7%;
+    width: 120px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.main-area .inputs-image input[type=file] {
+    outline: 0;
+    opacity: 0;
+    pointer-events: none;
+    user-select: none
+}
+
+.main-area .inputs-image .label {
+    width: 120px;
+    height: 120px;
+    border: 1px solid white;
+    background: white;
+    display: block;
+    padding: 1.2em;
+    transition: all 600ms ease-in-out;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.main-area .inputs-image .label fa-icon {
+    display: block;
+    color: black;
+    transition: all 600ms ease-in-out;
+}
+
+.main-area .inputs-image .label .title {
+    display: block;
+    margin-top: 10px;
+    color: black;
+    transition: all 600ms ease-in-out;
+    font-weight: 500;
+}
+
+.main-area .inputs-image .label:hover {
+    background: #55C34D;
+    color: white;
+}
+
+.main-area .inputs-image .label:hover fa-icon,
+.main-area .inputs-image .label:hover .title {
+    color: white;
+}
+
+.main-area .inputs-image .btn-white {
+    height: 15%;
+    width: 90%;
+    margin-left: 0px;
+    margin-top: 7%;
+}
+
+@media screen and (max-width: 1400px) {
+    .main-area {
+        background: #55C34D;
+        width: 80%;
+        height: 700px;
+        margin-top: 5%;
+        margin-left: 10%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .main-area .inputs-image .image-default {
+        margin-top: %;
+        width: 183px;
+        height: 243px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+}
+
+@media screen and (max-width: 1140px) {
+    .main-area {
+        background: #55C34D;
+        width: 80%;
+        height: 700px;
+        margin-top: 5%;
+        margin-left: 10%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .main-area .inputs-image .image-default {
+        margin-top: 7%;
+        width: 153px;
+        height: 202px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-area {
+        background: #55C34D;
+        width: 96%;
+        height: 500px;
+        margin-top: 5%;
+        margin-left: 2%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .main-area .inputs-image .image-default {
+        margin-top: 7%;
+        width: 90px;
+        height: 119px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .main-area .btn-white {
+        width: 56%;
+        margin-left: 7%;
+        height: 15%;
+        font-weight: 500;
+        font-size: 1em;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .main-area .inputs .btn-green {
+        font-weight: 500;
+        font-size: 1em;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: 5%;
+        height: 15%;
+        border: 1px solid white;
+    }
+    .main-area .inputs input,
+    textarea {
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: 5%;
+        height: 15%;
+        font-size: 1em;
+        text-align: center;
+        border: none;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .main-area .inputs-image .form-group {
+        margin-top: 7%;
+        width: 90px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .main-area .inputs-image .label {
+        width: 90px;
+        height: 90px;
+        border: 1px solid white;
+        background: white;
+        display: block;
+        padding: .6em;
+        transition: all 600ms ease-in-out;
+        cursor: pointer;
+        text-align: center;
+    }
+    .main-area .inputs-image .label fa-icon {
+        display: block;
+        color: black;
+        font-size: .8em;
+        transition: all 600ms ease-in-out;
+    }
+    .main-area .inputs-image .label .title {
+        display: block;
+        margin-top: 5px;
+        color: black;
+        font-size: .8em;
+        transition: all 600ms ease-in-out;
+        font-weight: 500;
+    }
+    .main-area .d-inline-block .btn-outline-primary {
+        width: 100%;
+        font-size: .6em;
+        color: black;
+        height: 100%;
+        border: none;
+        background: white;
+        border-radius: 0px;
+        transition: all 300ms cubic-bezier(0.77, 0, 0.175, 1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+}

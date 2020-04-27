@@ -1,0 +1,11 @@
+<div class="main">
+
+    <button class="btn-green" *ngIf="!first" (click)="copyMessage('+380 95 949 83 34')">+380 95 949 83 34</button>
+    <button class="btn-white" *ngIf="first" (click)="disableFirst()">Татьяна</button>
+    <button class="btn-green" *ngIf="!second" (click)="copyMessage('+380 98 416 67 82')">+380 98 416 67 82</button>
+    <button class="btn-white" *ngIf="second" (click)="disableSecond()">Татьяна</button>
+    <button class="btn-green" *ngIf="!third" (click)="copyMessage('+380 68 550 43 75')">+380 68 550 43 75</button>
+    <button class="btn-white" *ngIf="third" (click)="disableThird()">Игорь</button>
+    <a class="btn-green" href="https://goo.gl/maps/fpw4ZWvyiJuWh9ENA" target="_blank">Где мы</a>
+
+</div>

@@ -1,0 +1,9 @@
+<head-bar></head-bar>
+<ng-sidebar-container>
+    <ng-sidebar [(opened)]="_sharedService._isSideBarHidden">
+        <side-bar></side-bar>
+    </ng-sidebar>
+</ng-sidebar-container>
+<div class="router-outlet">
+    <router-outlet></router-outlet>
+</div>

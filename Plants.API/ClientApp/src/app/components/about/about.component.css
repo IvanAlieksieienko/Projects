@@ -1,0 +1,177 @@
+.picture {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow-y: scroll;
+}
+
+.picture img {
+    width: 100%;
+    filter: blur(5px);
+}
+
+.picture h1 {
+    position: absolute;
+    width: 100%;
+    z-index: 9999;
+    color: white;
+    font-size: 3.3rem;
+    top: 160px;
+    text-align: center;
+}
+
+.picture h2 {
+    position: absolute;
+    width: 100%;
+    z-index: 9999;
+    color: white;
+    font-size: 3rem;
+    top: 230px;
+    text-align: center;
+}
+
+.picture .down {
+    position: absolute;
+    top: 300px;
+    width: 100%;
+    z-index: 9999;
+    color: white;
+    text-align: center;
+}
+
+.picture .advantages {}
+
+.picture .advantages div {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.picture .advantages fa-icon {
+    width: 100%;
+    color: #55C34D;
+    margin-bottom: 5px;
+}
+
+.picture .advantages h3 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.picture .advantages h4 {
+    width: 100%;
+    height: 70px;
+}
+
+.left-float {
+    float: left;
+    width: 50%;
+}
+
+.right-float {
+    float: right;
+    width: 50%;
+}
+
+.first {
+    width: 90%;
+    margin-left: 5%;
+}
+
+.second {
+    width: 90%;
+    margin-left: 5%
+}
+
+.third {
+    width: 90%;
+    margin-left: 5%
+}
+
+.fourth {
+    width: 90%;
+    margin-left: 5%
+}
+
+@media screen and (max-width: 1000px) {
+    .picture h1 {
+        position: absolute;
+        width: 100%;
+        font-size: 1.4em;
+        z-index: 9999;
+        color: white;
+        top: 60px;
+        text-align: center;
+    }
+    .picture h2 {
+        position: absolute;
+        width: 100%;
+        font-size: 1.3em;
+        z-index: 9999;
+        color: white;
+        top: 115px;
+        text-align: center;
+    }
+    .picture .down {
+        position: absolute;
+        top: 140px;
+        width: 100%;
+        z-index: 9999;
+        color: white;
+        text-align: center;
+    }
+    .picture .advantages h3 {
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-size: 1.1em;
+    }
+    .picture .advantages h4 {
+        width: 100%;
+        height: 70px;
+        font-size: .9em;
+    }
+    .left-float {
+        display: grid;
+    }
+    .right-float {
+        display: grid;
+    }
+    .firstly {
+        width: 90%;
+        margin-left: 5%
+    }
+    .secondly {
+        width: 90%;
+        margin-left: 5%
+    }
+    .thirdly {
+        width: 90%;
+        margin-left: 5%
+    }
+    .fourdly {
+        width: 90%;
+        margin-left: 5%
+    }
+    .picture .advantages div {
+        margin-top: 15px;
+        margin-bottom: 0px;
+        text-align: center;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #55C34D;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(47, 107, 42);
+    cursor: pointer;
+}
