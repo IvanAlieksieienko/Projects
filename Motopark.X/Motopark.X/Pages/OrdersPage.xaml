@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:Motopark.X.Features"
+             mc:Ignorable="d"
+             x:Class="Motopark.X.Pages.OrdersPage" Title="Заказы">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:SpecialDateTimeConverter x:Key="dateConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+
+        <AbsoluteLayout>
+
+            <ListView x:Name="orders" ItemsSource="{Binding Orders}" RowHeight="100"
+            AbsoluteLayout.LayoutBounds="0, 0, 1, 1" BackgroundColor="White" AbsoluteLayout.LayoutFlags="All">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Удалить"
+                                    Command="{Binding BindingContext.DeleteCommand, Source={x:Reference orders}}"
+                                    CommandParameter="{Binding .}"/>
+                            </ViewCell.ContextActions>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*"/>
+                                    <ColumnDefinition Width="5*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1.66*"/>
+                                    <RowDefinition Height="1.66*"/>
+                                    <RowDefinition Height="1.66*"/>
+                                    <RowDefinition Height="1.66*"/>
+                                    <RowDefinition Height="1.66*"/>
+                                    <RowDefinition Height="1.66*"/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Text="{Binding Surname}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource FontColorGray}" FontSize="Medium"/>
+                                <Label Grid.Row="2" Grid.RowSpan="2" Grid.Column="0" Text="{Binding Name}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource FontColorGray}" FontSize="Medium"/>
+                                <Label Grid.Row="4" Grid.RowSpan="2" Grid.Column="0" Text="{Binding Patronymic}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource FontColorGray}" FontSize="Medium"/>
+                                <Label Grid.Row="0" Grid.RowSpan="3" Grid.Column="1" Text="{Binding TotalPrice, StringFormat='{0:N}  грн'}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource FontColorGray}" FontSize="Medium"/>
+                                <Label Grid.Row="3" Grid.RowSpan="3" Grid.Column="1" Text="{Binding CreationTime, Converter={StaticResource dateConverter} }" HorizontalTextAlignment="Center"
+                                           TextColor="{StaticResource FontColorGray}" FontSize="Medium" VerticalTextAlignment="Center"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </AbsoluteLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

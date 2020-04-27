@@ -1,0 +1,60 @@
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm col-12 border-bottom box-shadow mb-3">
+        <div class="container col-xl-11 col-lg-11 col-md-12 col-sm-12">
+            <a class="navbar-brand" [routerLink]="['/']">
+                <fa-icon class="main-icon" [icon]="mainIcon"></fa-icon>Motopark
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-label="Toggle navigation" [attr.aria-expanded]="isExpanded" (click)="toggle()">
+                <fa-icon [icon]="toggleIcon"></fa-icon>
+            </button>
+            <div class="navbar-collapse collapse multi-collapse d-sm-inline-flex flex-row-reverse" [ngClass]="{ show: isExpanded }">
+                <ul class="navbar-nav flex-grow col-xl-8 col-lg-10 col-md-12 col-sm-11">
+                    <li class="nav-item col-3" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
+                        <button class="btn nav-link text-center" [ngClass]="{'btn-white':! _sharedService._isShowSideBar, 'btn-blue': _sharedService._isShowSideBar}" (click)="showSideBar()">товары</button>
+                        <a class="nav-link btn-white text-center categories" (click)="uncollapse()" routerLink="category">товары</a>
+                    </li>
+                    <li class="nav-item col-3" [routerLinkActive]="['link-active']">
+                        <a class="nav-link btn-white text-center" (click)="uncollapse()" routerLink="about">о нас</a>
+                    </li>
+                    <li class="nav-item col-3" [routerLinkActive]="['link-active']">
+                        <a class="nav-link btn-white text-center" (click)="uncollapse()" routerLink="contact">контакты</a>
+                    </li>
+                    <li class="nav-item padding col-3 col-md-2 col-sm-2" [routerLinkActive]="['link-active']">
+                        <button class="nav-link btn-white text-center" (click)="getBaskets()" [ngbPopover]="popContent" placement="bottom" [autoClose]="'outside'">
+                            <fa-icon [icon]="icon"></fa-icon>
+                        </button>
+                    </li>
+                    <ng-template #popContent>
+                        <div class="basket-modal" *ngIf="!_isBasketsEmpty">
+                            <ng-container *ngFor="let product of products; index as i">
+                                <div class="row justify-content-center align-items-center basket">
+                                    <div class="col-2 image">
+                                        <img [src]="product.productImage.image.imagePath">
+                                    </div>
+                                    <div class="col-5 name">
+                                        <p>{{product.productImage.product.name}}</p>
+                                    </div>
+                                    <div class="col-3 price">
+                                        <p>{{product.productImage.product.price}} грн</p>
+                                    </div>
+                                    <div class="col-2 count">
+                                        <p>{{product.basket.count}}</p>
+                                    </div>
+                                </div>
+                            </ng-container>
+                        </div>
+                        <div class="row justify-content-center" *ngIf="!_isBasketsEmpty">
+                            <button class="nav-link col-8 btn-white text-center go-order" (click)="goToOrder()">Оформление
+                                заказа</button>
+                        </div>
+                        <div class="basket-modal" *ngIf="_isBasketsEmpty">
+                            <div class="row justify-content-center align-items-center height-100 font-weight-600">
+                                <p class="gray-font text-center">Ничего нет!<br>Начните добавлять товары!</p>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

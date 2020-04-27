@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Motopark.X.Pages.ProductByIDPage">
+    <ContentPage.Content>
+        <ContentView>
+            <ContentView.Content>
+                <OnPlatform x:TypeArguments="View">
+                    <On Platform="Android">
+                        <ScrollView>
+                            <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal" Margin="10, 10, 0, 0">
+                                    <Label FontSize="Medium" TextColor="{StaticResource FontColorGray}" Text="{Binding Product.Name, StringFormat='Название:  {0:N}'}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Margin="10, 10, 0, 0" IsVisible="{Binding IsShowParent}">
+                                    <Label FontSize="Medium" TextColor="{StaticResource FontColorGray}" Text="{Binding ParentCategory.Name, StringFormat='Родительская категория:  {0:N}'}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Margin="10, 10, 0, 0">
+                                    <Label FontSize="Medium" TextColor="{StaticResource FontColorGray}" Text="{Binding Product.Price, StringFormat='Цена:  {0:N}'}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Margin="10, 10, 0, 0">
+                                    <Label FontSize="Medium" TextColor="{StaticResource FontColorGray}" Text="{Binding Product.IsAvailable, StringFormat='Доступность:  {0:N}'}"/>
+                                </StackLayout>
+                                <CarouselView ItemsSource="{Binding ProductImages, Mode=TwoWay}">
+                                    <CarouselView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding Source, Mode=TwoWay}"/>
+                                        </DataTemplate>
+                                    </CarouselView.ItemTemplate>
+                                </CarouselView>
+                                <StackLayout Orientation="Horizontal" Margin="10, 10, 0, 0" IsVisible="{Binding IsShowDescription}">
+                                    <Label FontSize="Medium" TextColor="{StaticResource FontColorGray}" Text="{Binding Product.Description, StringFormat='Описание:  {0:N}'}"/>
+                                </StackLayout>
+                                <Label Margin="0, 20, 0, 0" TextColor="{StaticResource FontColorGray}" HorizontalTextAlignment="Center" FontSize="Medium" Text="Характеристики" IsVisible="{Binding IsShowFeatures, Mode=TwoWay}"/>
+                                <ListView x:Name="features" ItemsSource="{Binding Features, Mode=TwoWay}" IsVisible="{Binding IsShowFeatures, Mode=TwoWay}">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="20"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*"/>
+                                                    </Grid.RowDefinitions>
+
+                                                    <Label FontSize="Medium" Grid.Column="0" Grid.Row="0" TextColor="{StaticResource FontColorGray}" Text="{Binding Position, Mode=TwoWay}"/>
+                                                    <Label FontSize="Medium" Grid.Column="1" Grid.Row="0" TextColor="{StaticResource FontColorGray}" Text="{Binding FeatureName, Mode=TwoWay}"/>
+                                                    <Label FontSize="Medium" Grid.Column="2" Grid.Row="0" TextColor="{StaticResource FontColorGray}" Text="{Binding FeatureValue, Mode=TwoWay}"/>
+                                                </Grid>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </StackLayout>
+                        </ScrollView>
+
+                    </On>
+                    <On Platform="WPF">
+                        <ScrollView>
+                            <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal" Margin="10, 10, 0, 0">
+                                    <Label FontSize="Medium" TextColor="{StaticResource FontColorGray}" Text="{Binding Product.Name, StringFormat='Название:  {0:N}'}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Margin="10, 10, 0, 0" IsVisible="{Binding IsShowParent}">
+                                    <Label FontSize="Medium" TextColor="{StaticResource FontColorGray}" Text="{Binding ParentCategory.Name, StringFormat='Родительская категория:  {0:N}'}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Margin="10, 10, 0, 0">
+                                    <Label FontSize="Medium" TextColor="{StaticResource FontColorGray}" Text="{Binding Product.Price, StringFormat='Цена:  {0:N}'}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Margin="10, 10, 0, 0">
+                                    <Label FontSize="Medium" TextColor="{StaticResource FontColorGray}" Text="{Binding Product.IsAvailable, StringFormat='Доступность:  {0:N}'}"/>
+                                </StackLayout>
+                                <ScrollView HeightRequest="200">
+                                    <ListView x:Name="images" ItemsSource="{Binding ProductImages, Mode=TwoWay}" RowHeight="50">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <ViewCell>
+                                                    <Image Source="{Binding Source, Mode=TwoWay}"/>
+                                                </ViewCell>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                </ScrollView>
+                                <StackLayout Orientation="Horizontal" Margin="10, 10, 0, 0" IsVisible="{Binding IsShowDescription}">
+                                    <Label FontSize="Medium" TextColor="{StaticResource FontColorGray}" Text="{Binding Product.Description, StringFormat='Описание:  {0:N}'}"/>
+                                </StackLayout>
+                                <Label Margin="0, 20, 0, 0" TextColor="{StaticResource FontColorGray}" HorizontalTextAlignment="Center" FontSize="Medium" Text="Характеристики" IsVisible="{Binding IsShowFeatures, Mode=TwoWay}"/>
+                                <ListView x:Name="features1" ItemsSource="{Binding Features, Mode=TwoWay}" IsVisible="{Binding IsShowFeatures, Mode=TwoWay}" Margin="0,0,0,0">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="20"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*"/>
+                                                    </Grid.RowDefinitions>
+
+                                                    <Label FontSize="Medium" WidthRequest="20" Grid.Column="0" Grid.Row="0" TextColor="{StaticResource FontColorGray}" Text="{Binding Position, Mode=TwoWay}"/>
+                                                    <Label FontSize="Medium" Grid.Column="1" Grid.Row="0" TextColor="{StaticResource FontColorGray}" Text="{Binding FeatureName, Mode=TwoWay}"/>
+                                                    <Label FontSize="Medium" Grid.Column="2" Grid.Row="0" TextColor="{StaticResource FontColorGray}" Text="{Binding FeatureValue, Mode=TwoWay}"/>
+                                                </Grid>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </StackLayout>
+                        </ScrollView>
+                    </On>
+                </OnPlatform>
+
+            </ContentView.Content>
+        </ContentView>
+        
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,152 @@
+.container-fluid .back {
+    position: absolute;
+    top: -18px;
+    left: 0px;
+    width: 28px;
+    height: 28px;
+}
+
+.container-fluid .description button {
+    margin-left: 15px;
+    padding: 6px 20px;
+}
+
+.container-fluid .description .product-name {
+    font-size: 2em;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.container-fluid .description .product-description {
+    margin-top: 15px;
+    font-size: 1.6em;
+    font-weight: 400;
+    color: rgb(51, 51, 51);
+}
+
+.container-fluid .images {}
+
+.container-fluid .images .main-picture {
+    height: 250px;
+    padding: 0;
+}
+
+.container-fluid .images .main-picture .image-class {
+    max-width: 100%;
+    max-height: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+}
+
+.container-fluid .images .main-picture .image-class .img-fluid {
+    float: right;
+    max-width: none;
+    height: 100%;
+}
+
+.container-fluid .additional-images {
+    padding: 0;
+    height: 250px;
+    overflow-y: auto;
+}
+
+.container-fluid .images .additional-image {
+    margin-bottom: 20px;
+}
+
+.container-fluid .buy {
+    padding-left: 10px;
+}
+
+.container-fluid .price {
+    background: linear-gradient(to bottom right, #004992 30%, #4fc4ff 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    padding: 0;
+    font-size: 1.3em;
+}
+
+.container-fluid .price-area {
+    margin-top: 15px;
+}
+
+.container-fluid .table {
+    font-weight: 600;
+}
+
+.container-fluid .table .feature {
+    background: linear-gradient(to right, #0071e3a1 30%, #37adea87 90%);
+    color: white;
+}
+
+.container-fluid .character {
+    font-size: 3.5em;
+}
+
+.container-fluid .table .value {}
+
+@media (max-width: 1200px) {
+    .container-fluid .description .product-name {
+        font-size: 1.8em;
+        font-weight: 500;
+    }
+    .container-fluid .description .product-description {
+        font-size: 1.4em;
+        font-weight: 400;
+    }
+}
+
+@media (max-width: 992px) {
+    .container-fluid .description .product-name {
+        font-size: 1.7em;
+        font-weight: 500;
+    }
+    .container-fluid .description .product-description {
+        font-size: 1.3em;
+        font-weight: 400;
+    }
+}
+
+@media(max-width: 768px) {
+    .container-fluid .description .product-name {
+        margin-top: 30px;
+        font-size: 1.5em;
+        font-weight: 500;
+    }
+    .container-fluid .description .product-description {
+        font-size: 1.1em;
+        font-weight: 400;
+    }
+    .container-fluid .images {
+        margin-top: 25px;
+        order: 1;
+    }
+    .container-fluid .description {
+        order: 2;
+    }
+}
+
+@media (max-width: 576px) {
+    .container-fluid .character {
+        font-size: 2.5em;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #0071e380 30%, #2490ff47 90%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(127, 151, 185);
+    cursor: pointer;
+}

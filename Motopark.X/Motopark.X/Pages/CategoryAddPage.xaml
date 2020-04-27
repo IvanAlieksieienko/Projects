@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Motopark.X.Pages.CategoryAddPage" Title="Добавить категорию">
+    <ContentPage.Content>
+        <ContentView>
+            <ContentView.Content>
+                <OnPlatform x:TypeArguments="View">
+                    <On Platform="Android">
+                        <ScrollView>
+                            <StackLayout>
+
+                                <Label Text="Категория" TextColor="{StaticResource FontColorGray}" FontSize="Medium"  HorizontalTextAlignment="Center" 
+                                    VerticalTextAlignment="Center" Margin="0, 15, 0, 0" BackgroundColor="{StaticResource BackgroundWhite}"/>
+
+                                <Picker x:Name="categories" ItemsSource="{Binding Categories}" ItemDisplayBinding="{Binding Name}" 
+                                    BackgroundColor="{StaticResource BackgroundWhite}" HeightRequest="50"
+                                    Title="Подкатегория" FontSize="Medium" TextColor="{StaticResource FontColorGray}"
+                                    SelectedItem="{Binding ParentCategory}" />
+
+                                <Label Text="Название" FontSize="Medium"  BackgroundColor="{StaticResource BackgroundWhite}" HorizontalTextAlignment="Center" 
+                                    VerticalTextAlignment="Center" TextColor="{StaticResource FontColorGray}" Margin="0, 10, 0, 0"/>
+
+                                <Entry Text="{Binding Name}" HeightRequest="50" FontSize="Medium" TextColor="{StaticResource FontColorGray}" BackgroundColor="{StaticResource BackgroundWhite}" Margin="0, 0, 0, 0"/>
+
+                                <Label Text="Изображение" FontSize="Medium"  BackgroundColor="{StaticResource BackgroundWhite}" HorizontalTextAlignment="Center" 
+                                    VerticalTextAlignment="Center" Margin="0, 10, 0, 0" TextColor="{StaticResource FontColorGray}"/>
+
+                                <StackLayout Orientation="Horizontal" HeightRequest="50">
+                                    <Button Text="Сделать фото" CornerRadius="20" Style="{StaticResource btn-white}"  FontSize="Medium"
+                                        HorizontalOptions="StartAndExpand" Margin="30, 10, 0, 0" Command="{Binding MakePhotoCommand}"/>
+                                    <Button Text="Выбрать из галерии" CornerRadius="20" Style="{StaticResource btn-white}" HorizontalOptions="EndAndExpand" 
+                                        FontSize="Medium" Margin="0, 10, 30, 0" Command="{Binding PickPhotoCommand}"/>
+                                </StackLayout>
+                                
+
+
+                                <Image Source="{Binding Image.Source}"/>
+
+                                <Label Text="Описание" FontSize="Medium"  BackgroundColor="{StaticResource BackgroundWhite}" HorizontalTextAlignment="Center" 
+                                    VerticalTextAlignment="Center" Margin="0, 10, 0, 0" TextColor="{StaticResource FontColorGray}"/>
+
+                                <Editor Text="{Binding Description}" TextColor="{StaticResource FontColorGray}" HeightRequest="100" Placeholder="..."/>
+
+                                <Button Text="Добавить" CornerRadius="20" Style="{StaticResource btn-white}" Margin="30, 0, 30, 0"
+                                    Command="{Binding AddCategoryCommand}"/>
+
+                            </StackLayout>
+                        </ScrollView>
+                    </On>
+                    <On Platform="WPF">
+                        <ScrollView>
+                            <StackLayout>
+
+                                <Label Text="Категория" TextColor="{StaticResource FontColorGray}" FontSize="Medium"  HorizontalTextAlignment="Center" 
+                                    VerticalTextAlignment="Center" Margin="0, 15, 0, 0" BackgroundColor="{StaticResource BackgroundWhite}"/>
+
+                                <Picker x:Name="categoriesw" ItemsSource="{Binding Categories}" ItemDisplayBinding="{Binding Name}" 
+                                    BackgroundColor="{StaticResource BackgroundWhite}" HeightRequest="50"
+                                    Title="Подкатегория" FontSize="Medium" TextColor="{StaticResource FontColorGray}"
+                                    SelectedItem="{Binding ParentCategory}" />
+
+                                <Label Text="Название" FontSize="Medium"  BackgroundColor="{StaticResource BackgroundWhite}" HorizontalTextAlignment="Center" 
+                                    VerticalTextAlignment="Center" TextColor="{StaticResource FontColorGray}" Margin="0, 10, 0, 0"/>
+
+                                <Entry Text="{Binding Name}" HeightRequest="50" FontSize="Medium" TextColor="{StaticResource FontColorGray}" BackgroundColor="{StaticResource BackgroundWhite}" Margin="0, 0, 0, 0"/>
+
+                                <Label Text="Изображение" FontSize="Medium"  BackgroundColor="{StaticResource BackgroundWhite}" HorizontalTextAlignment="Center" 
+                                    VerticalTextAlignment="Center" Margin="0, 10, 0, 0" TextColor="{StaticResource FontColorGray}"/>
+
+                                <StackLayout Orientation="Horizontal" HeightRequest="50">
+                                    <Button Text="Выбрать из галерии" CornerRadius="20" Style="{StaticResource btn-white}" HorizontalOptions="CenterAndExpand" 
+                                        FontSize="Medium" Margin="0, 10, 0, 0" Command="{Binding PickPhotoCommand}"/>
+                                </StackLayout>
+                                
+                                <Image Source="{Binding Image.Source}"/>
+
+                                <Label Text="Описание" FontSize="Medium"  BackgroundColor="{StaticResource BackgroundWhite}" HorizontalTextAlignment="Center" 
+                                    VerticalTextAlignment="Center" Margin="0, 10, 0, 0" TextColor="{StaticResource FontColorGray}"/>
+
+                                <Editor Text="{Binding Description}" TextColor="{StaticResource FontColorGray}" HeightRequest="100" Placeholder="..."/>
+
+                                <Button Text="Добавить" CornerRadius="20" Style="{StaticResource btn-white}" HorizontalOptions="CenterAndExpand" WidthRequest="300"
+                                    HeightRequest="50" Command="{Binding AddCategoryCommand}"/>
+
+                            </StackLayout>
+                        </ScrollView>
+                    </On>
+                </OnPlatform>
+
+            </ContentView.Content>
+        </ContentView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,59 @@
+.container {
+    padding: 0;
+}
+
+.categories {
+    padding-bottom: 190px;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.category {
+    margin-top: 10px;
+    height: 50px;
+}
+
+.all {
+    margin: 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: 100px;
+    background: linear-gradient(to bottom right, #4778a92b 30%, #ffffff17 90%);
+}
+
+.all button {
+    width: 100%;
+    margin-top: 30px;
+    height: 40px;
+    z-index: 1003;
+    padding-bottom: 4px;
+}
+
+.all button:focus {
+    outline: none;
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .all {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #0071e380 30%, #2490ff47 90%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(127, 151, 185);
+    cursor: pointer;
+}

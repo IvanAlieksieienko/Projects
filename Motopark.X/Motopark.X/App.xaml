@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Motopark.X.App">
+    <Application.Resources>
+
+        <!-- Colors -->
+        <Color x:Key="FontColorBlue">#0071e3</Color>
+        <Color x:Key="FontColorGray">#333333</Color>
+        <Color x:Key="FontColorWhite">#ffffff</Color>
+        <Color x:Key="BackgroundGray">#f0f0f0</Color>
+        <Color x:Key="BackgroundBlue">#0071e3</Color>
+        <Color x:Key="BackgroundWhite">#ffffff</Color>
+        <Color x:Key="BorderBlue">#0071e3</Color>
+        <Color x:Key="NavigationBarTextColor">#0071e3</Color>
+        <Color x:Key="NormalTextColor">Black</Color>
+
+        <!-- Implicit styles -->
+        <Style TargetType="{x:Type NavigationPage}">
+            <Setter Property="BarBackgroundColor"
+                    Value="{StaticResource BackgroundGray}" />
+            <Setter Property="BarTextColor"
+                    Value="{StaticResource FontColorBlue}" />
+        </Style>
+
+        <Style TargetType="{x:Type ContentPage}"
+               ApplyToDerivedTypes="True">
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource BackgroundWhite}" />
+        </Style>
+
+        <Style TargetType="Button" x:Key="btn-blue">
+            <Setter Property="BackgroundColor" Value="{StaticResource BackgroundBlue}"/>
+            <Setter Property="TextColor" Value="{StaticResource FontColorWhite}"/>
+        </Style>
+
+        <Style TargetType="Button" x:Key="btn-white">
+            <Setter Property="BackgroundColor" Value="{StaticResource BackgroundGray}"/>
+            <Setter Property="TextColor" Value="{StaticResource FontColorBlue}"/>
+            <Setter Property="BorderWidth" Value="1"/>
+            <Setter Property="BorderColor" Value="{StaticResource BorderBlue}"/>
+        </Style>
+
+    </Application.Resources>
+</Application>

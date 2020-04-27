@@ -1,0 +1,196 @@
+.container-fluid {
+    color: #0071e3;
+    font-weight: 600;
+}
+
+.container-fluid .back {
+    position: absolute;
+    top: -18px;
+    left: 0px;
+    width: 28px;
+    height: 28px;
+}
+
+.container-fluid .title {
+    font-weight: 400;
+    margin-top: 15px;
+    margin-bottom: 0px;
+    height: 80px;
+}
+
+.container-fluid .description {}
+
+.container-fluid .description .category-name {
+    font-size: 3em;
+    font-weight: 500;
+}
+
+.container-fluid .description .category-description {
+    font-size: 2.5em;
+    font-weight: 500;
+    color: rgb(51, 51, 51);
+}
+
+.container-fluid .category-image .image-class {
+    cursor: pointer;
+    height: 25vw;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.category {
+    margin-top: 60px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    transition: all 400ms ease-in-out;
+    background: white;
+}
+
+.category:hover {
+    transform: scale(1.1);
+    background: white;
+    cursor: pointer;
+}
+
+.category .image-class {
+    /* height 
+        12vw - для горизонтальной формы
+        15vw - для квадратной формы
+        20vw - для вертикальной формы
+    ; */
+    height: 20vw;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    overflow: hidden;
+}
+
+.category .image-class img {
+    max-width: auto !important;
+    width: 100%;
+    /* для вертиальной формы */
+    /* height: 100%; */
+    /* Для горизонтальной или квадратной формы */
+    cursor: pointer;
+}
+
+.category .name {
+    position: absolute;
+    bottom: 0;
+    padding: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+}
+
+.category .name span {
+    font-size: medium;
+    margin-top: 10px;
+    padding: 0 5px;
+    padding-bottom: 10px;
+}
+
+.empty {
+    font-size: 2.5em;
+}
+
+.name span:hover .category,
+span {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+    .category .image-class {
+        height: 25vw;
+    }
+    .container-fluid .description .category-description {
+        font-size: 2em;
+        font-weight: 500;
+    }
+    .container-fluid .description .category-name {
+        font-size: 2.8em;
+        font-weight: 500;
+    }
+    .empty {
+        font-size: 2.3em;
+    }
+}
+
+@media (max-width: 992px) {
+    .container-fluid .category-image .image-class {
+        height: 35vw;
+    }
+    .category .image-class {
+        height: 35vw;
+    }
+    .category .name span {
+        font-size: small !important;
+    }
+    .container-fluid .description .category-description {
+        font-size: 1.7em;
+        font-weight: 500;
+    }
+    .container-fluid .description .category-name {
+        font-size: 2.5em;
+        font-weight: 500;
+    }
+    .empty {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .container-fluid .category-image .image-class {
+        height: 45vw;
+    }
+    .category .image-class {
+        height: 55vw;
+    }
+    .category .name span {
+        font-size: small !important;
+    }
+    .container-fluid .description .category-description {
+        font-size: 1.5em;
+        font-weight: 500;
+    }
+    .category {
+        margin-top: 25px;
+    }
+    .container-fluid .description .category-name {
+        font-size: 2em;
+        font-weight: 500;
+    }
+    .empty {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 576px) {
+    .container-fluid .title {
+        height: 50px;
+        font-size: 2em;
+    }
+    .category .image-class {
+        height: 55vw;
+    }
+    .category .name span {
+        font-size: small !important;
+    }
+    .container-fluid .category-image {
+        display: none;
+    }
+    .container-fluid .description .category-description {
+        padding: 0;
+    }
+    .container-fluid .description .category-name {
+        margin-top: 25px;
+        font-size: 1.9em;
+        font-weight: 500;
+        padding: 0;
+    }
+    .empty {
+        font-size: 1.6em;
+    }
+}

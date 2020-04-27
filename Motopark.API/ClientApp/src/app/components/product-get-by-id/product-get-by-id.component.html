@@ -1,0 +1,61 @@
+<div class="container-fluid">
+    <div class="row justify-content-center margin-top-20">
+        <button class="btn-white back" (click)="goToCategory()">
+            <fa-icon [icon]="backArrow" size="1x"></fa-icon>
+        </button>
+        <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12 description">
+            <div class="row justify-content-left">
+                <p class="display-4 text-left col-12 product-name gradient-font">{{product.name}}</p>
+                <button class="btn-white float-left" (click)="goToCategory()">{{category.name}}</button>
+                <p class="display-4 text-left col-12 product-description gradient-font">{{product.description}}</p>
+            </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-5 col-sm-12 col-12 images">
+            <div class="row justify-content-left">
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-6 col-8 main-picture">
+                    <div class="col-12 image-class" (click)="showImage(mainImage.imagePath)" title="Нажмите, чтобы посмотреть полное изображение">
+                        <img [src]="mainImage.imagePath" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-4 additional-images">
+                    <ng-container *ngFor="let image of images; index as i">
+                        <div class="col-12 additional-image image-class" (click)="showImage(image.imagePath)" title="Нажмите, чтобы посмотреть полное изображение">
+                            <img [src]="image.imagePath" class="img-fluid">
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="row justify-content-center price-area">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-8 col-8">
+                    <div class="row justify-content-left">
+                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-7 col-7 text-right price">
+                            <span>{{product.price}} ГРН</span>
+                        </div>
+                        <div class="col-4 buy">
+                            <button class="btn-white" (click)="addToBasket()">
+                                <fa-icon [icon]="icon"></fa-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-12 divide-line" *ngIf="!_isFeaturesEmpty">
+
+    <div class="row justify-content-center margin-top-20" *ngIf="!_isFeaturesEmpty">
+        <p class="display-4 text-center col-12 character gradient-font" *ngIf="!_isFeaturesEmpty">Характеристики</p>
+        <table class="table col-xl-6 col-lg-8 col-md-8 col-sm-10 col-12">
+            <ng-container *ngFor="let feature of features; index as i">
+                <tr>
+                    <td class="feature">{{feature.featureName}}</td>
+                    <td class="value gradient-font">{{feature.featureValue}}</td>
+                </tr>
+            </ng-container>
+        </table>
+    </div>
+</div>
+
+<div class="image-full-view" *ngIf="_isShowFullImage" (click)="closeImageView()" title="Нажмите, чтобы закрыть просмотр изображения">
+    <img [src]="_fullImagePath">
+</div>

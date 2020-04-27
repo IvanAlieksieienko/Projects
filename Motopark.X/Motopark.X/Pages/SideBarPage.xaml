@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:local="clr-namespace:Motopark.X.Pages"
+             mc:Ignorable="d"
+             x:Class="Motopark.X.Pages.SideBarPage" Title="Master">
+
+    <StackLayout BackgroundColor="{StaticResource BackgroundGray}">
+        <ListView x:Name="listView" x:FieldModifier="public" SeparatorColor="White" RowHeight="100" VerticalScrollBarVisibility="Never">
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type local:SideBarItem}">
+                    <local:SideBarItem Title="Дом" IconSource="contacts.png" TargetType="{x:Type local:HomePage}" />
+                    <local:SideBarItem Title="Заказы" IconSource="contacts.png" TargetType="{x:Type local:OrdersPage}" />
+                    <local:SideBarItem Title="Категории" IconSource="contacts.png" TargetType="{x:Type local:CategoriesPage}" />
+                    <local:SideBarItem Title="Продукты" IconSource="contacts.png" TargetType="{x:Type local:ProductsPage}" />
+                </x:Array>
+            </ListView.ItemsSource>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label HorizontalTextAlignment="Center" LineBreakMode="NoWrap" VerticalTextAlignment="Center" FontSize="Medium" 
+                               Text="{Binding Title}" TextColor="{StaticResource FontColorBlue}" />
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

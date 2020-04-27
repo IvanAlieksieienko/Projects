@@ -1,0 +1,58 @@
+app-nav-menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9997;
+}
+
+.collapse {
+    position: fixed;
+    display: block !important;
+    top: 82px;
+    transition: all 600ms ease-in-out;
+    transform: translateX(-16.7vw);
+    height: calc(100% - 80px);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    z-index: 9999;
+    padding: 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.container {
+    padding: 0;
+    top: 80px;
+}
+
+.show {
+    transform: translateX(0vw) !important;
+}
+
+@media (max-width: 1200px) {
+    .collapse {
+        transform: translateX(-26vw);
+    }
+}
+
+@media (max-width: 992px) {
+    .collapse {
+        transform: translateX(-26vw);
+    }
+}
+
+@media (max-width: 768px) {
+    .collapse {
+        top: 60px;
+        transform: translateX(-51vw);
+        height: calc(100% - 60px);
+    }
+    .container {
+        top: 60px;
+    }
+}
+
+@media (max-width: 576px) {
+    .collapse {
+        display: none !important;
+    }
+}

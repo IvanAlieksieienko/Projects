@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="row" *ngIf="!_isProductsEmpty">
+        <p class="display-4 text-center col-12 title gradient-font">Все продукты</p>
+    </div>
+    <div class="row justify-content-center" *ngIf="!_isProductsEmpty">
+        <ng-container *ngFor="let product of _products | paginate: { itemsPerPage: pageSize, currentPage: page, totalItems:_products.length }">
+            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-10">
+                <div class="row justify-content-center">
+                    <div class="product col-11" (click)="goToProduct(product.product.id)">
+                        <div class="row justify-content-center">
+                            <div class="image-class">
+                                <img [src]="product.image.imagePath" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="row justify-content-center info">
+                            <span class="col-12 text-center gray-font">{{product.product.name}}</span>
+                            <span class="col-12 text-center gray-font padding-bottom-10">{{product.product.price}}
+                                грн</span>
+                            <button class="col-10 btn-white" (click)="addToBasket(product.product)">Купить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+    <div class="row justify-content-center" *ngIf="!_isProductsEmpty">
+        <div class="pagination">
+            <pagination-controls class="my-pagination" (pageChange)="page = $event" previousLabel="<" nextLabel=">"></pagination-controls>
+        </div>
+    </div>
+</div>

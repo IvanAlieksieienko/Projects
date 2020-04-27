@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:Motopark.X.Features"
+             mc:Ignorable="d"
+             x:Class="Motopark.X.Pages.OrderByIDPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:PostNameConverter x:Key="postNameConverter" />
+            <local:DeliveryNameConverter x:Key="deliveryNameConverter"/>
+            <local:PayTypeConverter x:Key="payTypeConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ContentView>
+            <ContentView.Content>
+                <OnPlatform x:TypeArguments="View">
+                    <On Platform="Android">
+                        <ScrollView>
+                            <StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Статус" TextColor="{StaticResource FontColorGray}"  HorizontalOptions="CenterAndExpand"
+                                    HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Small"/>
+                                    <Picker x:Name="statuc1" Grid.Column="1" Grid.Row="0" ItemsSource="{Binding Statuses}" 
+                                    VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                                    BackgroundColor="{StaticResource BackgroundWhite}" WidthRequest="150"
+                                    FontSize="Small" TextColor="{StaticResource FontColorGray}"
+                                    SelectedItem="{Binding OrderStatus}" />
+                                </StackLayout>
+
+                                <Label Text="Корзина" FontSize="Small" TextColor="{StaticResource FontColorGray}" HorizontalOptions="CenterAndExpand"/>
+                                <ScrollView HeightRequest="100">
+                                    <ListView ItemsSource="{Binding ProductBaskets}" RowHeight="30">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <ViewCell>
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="3.33*"/>
+                                                            <ColumnDefinition Width="3.33*"/>
+                                                            <ColumnDefinition Width="3.33*"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="10*"/>
+                                                        </Grid.RowDefinitions>
+                                                        <Label Grid.Row="0" Grid.Column="0" Text="{Binding ProductName}" 
+                                               VerticalTextAlignment="Center" HorizontalTextAlignment="Center" 
+                                               TextColor="{StaticResource FontColorGray}" FontSize="Small"/>
+                                                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding Count}" 
+                                               VerticalTextAlignment="Center" HorizontalTextAlignment="Center" 
+                                               TextColor="{StaticResource FontColorGray}" FontSize="Small"/>
+                                                        <Label Grid.Row="0" Grid.Column="2" Text="{Binding ProductPrice}" 
+                                               VerticalTextAlignment="Center" HorizontalTextAlignment="Center" 
+                                               TextColor="{StaticResource FontColorGray}" FontSize="Small"/>
+                                                    </Grid>
+                                                </ViewCell>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                </ScrollView>
+                                <Label TextColor="{StaticResource FontColorGray}" HorizontalTextAlignment="Center" FontSize="Small" Text="{Binding Delivery.PostName, Converter={StaticResource postNameConverter}}"/>
+                                <Label TextColor="{StaticResource FontColorGray}" HorizontalTextAlignment="Center" FontSize="Small" Text="{Binding Delivery.DeliveryName, Converter={StaticResource deliveryNameConverter}}"/>
+                                <Label TextColor="{StaticResource FontColorGray}" HorizontalTextAlignment="Center" FontSize="Small" Text="{Binding Delivery.PayType, Converter={StaticResource payTypeConverter}}"/>
+                                <Label TextColor="{StaticResource FontColorGray}" HorizontalTextAlignment="Center" FontSize="Small" Text="{Binding Delivery.Region}"/>
+                                <Label TextColor="{StaticResource FontColorGray}" HorizontalTextAlignment="Center" FontSize="Small" Text="{Binding Delivery.City}"/>
+                                <Label TextColor="{StaticResource FontColorGray}" HorizontalTextAlignment="Center" FontSize="Small" Text="{Binding Delivery.Street}"/>
+                                <Label TextColor="{StaticResource FontColorGray}" HorizontalTextAlignment="Center" FontSize="Small" Text="{Binding Delivery.HouseNumber}"/>
+
+                                <Grid Margin="0, 20, 0, 0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="3.33*"/>
+                                        <ColumnDefinition Width="3.33*"/>
+                                        <ColumnDefinition Width="3.33*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label TextColor="{StaticResource FontColorGray}" HorizontalTextAlignment="Center" FontSize="Small" Text="{Binding Order.Surname}" Grid.Row="0" Grid.Column="0"/>
+                                    <Label TextColor="{StaticResource FontColorGray}" HorizontalTextAlignment="Center" FontSize="Small" Text="{Binding Order.Name}" Grid.Row="0" Grid.Column="1"/>
+                                    <Label TextColor="{StaticResource FontColorGray}" HorizontalTextAlignment="Center" FontSize="Small" Text="{Binding Order.Patronymic}" Grid.Row="0" Grid.Column="2"/>
+                                </Grid>
+
+
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="50"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="5*"/>
+                                        <ColumnDefinition Width="5*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Button CornerRadius="30" Text="{Binding Order.PhoneNumber}" 
+                                            Style="{StaticResource btn-white}" Grid.Row="0" Grid.Column="0"/>
+                                    <Button CornerRadius="30" Text="{Binding Order.Email}" 
+                                            Style="{StaticResource btn-white}" Grid.Row="0" Grid.Column="1"/>
+                                </Grid>
+                                <Label TextColor="{StaticResource FontColorGray}" HorizontalTextAlignment="Center" FontSize="Small" Text="{Binding Order.Comment}"/>
+
+                                <Button HorizontalOptions="CenterAndExpand" CornerRadius="30" Text="Сохранить" HeightRequest="50" Style="{StaticResource btn-white}" 
+                                    WidthRequest="300" Command="{Binding SaveCommand}"/>
+
+                            </StackLayout>
+                        </ScrollView>
+                    </On>
+                    <On Platform="WPF">
+                        <ScrollView>
+                            <StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Статус" TextColor="{StaticResource FontColorGray}"  HorizontalOptions="CenterAndExpand"
+                                    HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Small"/>
+                                    <Picker x:Name="statuc" Grid.Column="1" Grid.Row="0" ItemsSource="{Binding Statuses}" 
+                                    VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                                    BackgroundColor="{StaticResource BackgroundWhite}" HeightRequest="20" WidthRequest="150"
+                                    FontSize="Small" TextColor="{StaticResource FontColorGray}"
+                                    SelectedItem="{Binding OrderStatus}" />
+                                </StackLayout>
+
+                                <Label Text="Корзина" FontSize="Small" TextColor="{StaticResource FontColorGray}" HorizontalOptions="CenterAndExpand"/>
+                                <ScrollView HeightRequest="100">
+                                    <ListView ItemsSource="{Binding ProductBaskets}" RowHeight="30">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <ViewCell>
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="3.33*"/>
+                                                            <ColumnDefinition Width="3.33*"/>
+                                                            <ColumnDefinition Width="3.33*"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="10*"/>
+                                                        </Grid.RowDefinitions>
+                                                        <Label Grid.Row="0" Grid.Column="0" Text="{Binding ProductName}" 
+                                               VerticalTextAlignment="Center" HorizontalTextAlignment="Center" 
+                                               TextColor="{StaticResource FontColorGray}" FontSize="Small"/>
+                                                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding Count}" 
+                                               VerticalTextAlignment="Center" HorizontalTextAlignment="Center" 
+                                               TextColor="{StaticResource FontColorGray}" FontSize="Small"/>
+                                                        <Label Grid.Row="0" Grid.Column="2" Text="{Binding ProductPrice}" 
+                                               VerticalTextAlignment="Center" HorizontalTextAlignment="Center" 
+                                               TextColor="{StaticResource FontColorGray}" FontSize="Small"/>
+                                                    </Grid>
+                                                </ViewCell>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                </ScrollView>
+                                <Label TextColor="{StaticResource FontColorGray}" HorizontalTextAlignment="Center" FontSize="Small" Text="{Binding Delivery.PostName, Converter={StaticResource postNameConverter}}"/>
+                                <Label TextColor="{StaticResource FontColorGray}" HorizontalTextAlignment="Center" FontSize="Small" Text="{Binding Delivery.DeliveryName, Converter={StaticResource deliveryNameConverter}}"/>
+                                <Label TextColor="{StaticResource FontColorGray}" HorizontalTextAlignment="Center" FontSize="Small" Text="{Binding Delivery.PayType, Converter={StaticResource payTypeConverter}}"/>
+                                <Label TextColor="{StaticResource FontColorGray}" HorizontalTextAlignment="Center" FontSize="Small" Text="{Binding Delivery.Region}"/>
+                                <Label TextColor="{StaticResource FontColorGray}" HorizontalTextAlignment="Center" FontSize="Small" Text="{Binding Delivery.City}"/>
+                                <Label TextColor="{StaticResource FontColorGray}" HorizontalTextAlignment="Center" FontSize="Small" Text="{Binding Delivery.Street}"/>
+                                <Label TextColor="{StaticResource FontColorGray}" HorizontalTextAlignment="Center" FontSize="Small" Text="{Binding Delivery.HouseNumber}"/>
+
+                                <Grid Margin="0, 20, 0, 0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="3.33*"/>
+                                        <ColumnDefinition Width="3.33*"/>
+                                        <ColumnDefinition Width="3.33*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label TextColor="{StaticResource FontColorGray}" HorizontalTextAlignment="Center" FontSize="Small" Text="{Binding Order.Surname}" Grid.Row="0" Grid.Column="0"/>
+                                    <Label TextColor="{StaticResource FontColorGray}" HorizontalTextAlignment="Center" FontSize="Small" Text="{Binding Order.Name}" Grid.Row="0" Grid.Column="1"/>
+                                    <Label TextColor="{StaticResource FontColorGray}" HorizontalTextAlignment="Center" FontSize="Small" Text="{Binding Order.Patronymic}" Grid.Row="0" Grid.Column="2"/>
+                                </Grid>
+
+
+                                <StackLayout Orientation="Horizontal" HeightRequest="50">
+                                    <Button HorizontalOptions="CenterAndExpand" CornerRadius="30" Text="{Binding Order.PhoneNumber}" Style="{StaticResource btn-white}" WidthRequest="300"/>
+                                    <Button HorizontalOptions="CenterAndExpand" CornerRadius="30" Text="{Binding Order.Email}" Style="{StaticResource btn-white}" WidthRequest="300"/>
+                                </StackLayout>
+
+                                <Label TextColor="{StaticResource FontColorGray}" HorizontalTextAlignment="Center" FontSize="Small" Text="{Binding Order.Comment}"/>
+
+                                <Button HorizontalOptions="CenterAndExpand" CornerRadius="30" Text="Сохранить" HeightRequest="50" Style="{StaticResource btn-white}" 
+                                    WidthRequest="300" Command="{Binding SaveCommand}"/>
+
+                            </StackLayout>
+                        </ScrollView>
+                    </On>
+                </OnPlatform>
+            </ContentView.Content>
+        </ContentView>
+        
+    </ContentPage.Content>
+</ContentPage>

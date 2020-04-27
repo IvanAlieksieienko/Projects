@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <div class="row margin-top-20">
+        <button class="btn-white back" (click)="backToCategory()">
+            <fa-icon [icon]="backArrow" size="1x"></fa-icon>
+        </button>
+        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 description">
+            <div class="row align-items-center justify-content-center height-100">
+                <p class="display-4 text-center col-12 category-name gradient-font">{{_category.name}}</p>
+                <p class="display-4 text-center col-xl-10 col-12 category-description">{{_category.description}}</p>
+            </div>
+        </div>
+        <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-0 category-image">
+            <div class="image-class" (click)="showImage(_category.imagePath)" title="Нажмите, чтобы посмотреть полное изображение">
+                <img [src]="_category.imagePath" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    <hr class="col-10 divide-line" *ngIf="!_isSubCategoriesEmpty">
+    <div class="row" *ngIf="!_isSubCategoriesEmpty">
+        <p class="display-4 text-center col-12 title gradient-font">Подкатегории</p>
+    </div>
+    <div class="row justify-content-center" *ngIf="!_isSubCategoriesEmpty">
+        <ng-container *ngFor="let category of _subCategories; index as i">
+            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
+                <div class="row justify-content-center">
+                    <div class="category col-11" (click)="showCategory(category.id)">
+                        <div class="row justify-content-center">
+                            <div class="image-class">
+                                <img [src]="category.imagePath" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="row justify-content-center name">
+                            <span class="col-11 text-center gradient-font">{{category.name}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+    <br>
+    <hr class="col-10 divide-line" *ngIf="!_isProductsEmpty">
+    <product-get-all [_products_all]="_products"></product-get-all>
+    <div class="row justify-content-center">
+        <hr class="col-10 divide-line" *ngIf="_isProductsEmpty && _isSubCategoriesEmpty">
+        <div class="col-10" *ngIf="_isProductsEmpty && _isSubCategoriesEmpty">
+            <p class="display-4 empty text-center col-12 gradient-font">Здесь пока пусто...</p>
+        </div>
+    </div>
+</div>
+<div class="image-full-view" *ngIf="_isShowFullImage" (click)="closeImageView()" title="Нажмите, чтобы закрыть просмотр изображения">
+    <img [src]="_fullImagePath">
+</div>

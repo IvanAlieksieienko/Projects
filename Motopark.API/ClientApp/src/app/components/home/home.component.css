@@ -1,0 +1,14 @@
+html {}
+
+.container-fluid {
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: radial-gradient(#55ddff, #0081b5);
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    .container-fluid {
+        height: calc(100vh - 60px);
+    }
+}

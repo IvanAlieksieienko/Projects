@@ -1,0 +1,12 @@
+<div class="container col-12">
+    <div class="categories">
+        <ng-container *ngFor="let category of _categories; index as i">
+            <div class="col-12 d-flex justify-content-center category">
+                <button class="col-12 btn-white" (click)="showCategory(category.id)">{{category.name}}</button>
+            </div>
+        </ng-container>
+    </div>
+    <div class="row justify-content-center all">
+        <button class="col-10 btn-blue" (click)="goToAll()">все</button>
+    </div>
+</div>

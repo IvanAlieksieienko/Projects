@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             x:Class="Motopark.X.Pages.ProductsPage" Title="Продукты">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+
+            <ListView x:Name="products" ItemsSource="{Binding Products}" RowHeight="50"
+            AbsoluteLayout.LayoutBounds="0, 0, 1, 1" BackgroundColor="{StaticResource BackgroundWhite}" AbsoluteLayout.LayoutFlags="All">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Редактировать"
+                                    Command="{Binding BindingContext.EditCommand, Source={x:Reference products}}"
+                                    CommandParameter="{Binding .}"/>
+                                <MenuItem Text="Удалить"
+                                    Command="{Binding BindingContext.DeleteCommand, Source={x:Reference products}}"
+                                    CommandParameter="{Binding .}"/>
+                            </ViewCell.ContextActions>
+                            <Label Text="{Binding Name}" VerticalTextAlignment="Center" Margin="40, 0, 0, 0" TextColor="{StaticResource FontColorGray}" FontSize="Medium"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button android:Button.UseDefaultShadow="False" AbsoluteLayout.LayoutBounds=".9, .95, 80, 80" AbsoluteLayout.LayoutFlags="PositionProportional" 
+                   CornerRadius="50" Text="+" FontSize="30" Style="{StaticResource btn-blue}" Command="{Binding GoToAddPageCommand}"/>
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
