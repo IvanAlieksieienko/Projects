@@ -30,7 +30,7 @@
     "bootstrap": "^4.3.1",
     "core-js": "^3.3.3",
     "guid-typescript": "^1.0.9",
-    "jquery": "3.4.1",
+    "jquery": "3.5.0",
     "ngx-pagination": "^5.0.0",
     "ngx-spinner": "^8.1.0",
     "oidc-client": "^1.9.1",
