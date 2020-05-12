@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finder.UI", "Finder.UI\Finder.UI.csproj", "{346EDF42-D683-4830-9D30-1227C060B9D9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Finder.Core", "Finder.Core\Finder.Core.csproj", "{86328148-6650-4E6C-9C02-FD12DAB8AAD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finder.UTest", "Finder.UTest\Finder.UTest.csproj", "{FEACA168-54D4-4712-B0D4-B14ED2FA8A29}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{346EDF42-D683-4830-9D30-1227C060B9D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{346EDF42-D683-4830-9D30-1227C060B9D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{346EDF42-D683-4830-9D30-1227C060B9D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{346EDF42-D683-4830-9D30-1227C060B9D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86328148-6650-4E6C-9C02-FD12DAB8AAD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86328148-6650-4E6C-9C02-FD12DAB8AAD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86328148-6650-4E6C-9C02-FD12DAB8AAD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86328148-6650-4E6C-9C02-FD12DAB8AAD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEACA168-54D4-4712-B0D4-B14ED2FA8A29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEACA168-54D4-4712-B0D4-B14ED2FA8A29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEACA168-54D4-4712-B0D4-B14ED2FA8A29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEACA168-54D4-4712-B0D4-B14ED2FA8A29}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E598376B-2C71-40BD-889A-AE48077DF8EA}
+	EndGlobalSection
+EndGlobal

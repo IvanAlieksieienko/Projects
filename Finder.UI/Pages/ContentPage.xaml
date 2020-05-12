@@ -1,0 +1,153 @@
+﻿<UserControl x:Class="Finder.UI.Pages.ContentPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Finder.UI.Pages"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors" xmlns:local1="clr-namespace:Finder.UI.Additional.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1280" x:Name="ContentPageControl">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <local1:SizeConditionsConverter x:Key="sizeConditionsConverter" />
+            <local1:SizeConditionConverter x:Key="sizeConditionConverter" />
+            <local1:UnitsOfMeasureConverter x:Key="unitsOfMeasureConverter" />
+            <local1:UnitOfMeasureConverter x:Key="unitOfMeasureConverter" />
+            <local1:DateConditionsConverter x:Key="dateConditionsConverter" />
+            <local1:DateConditionConverter x:Key="dateConditionConverter" />
+            <local1:SearchTypeToOneLineVisibilityConverter x:Key="searchTypeToOneLineVisibilityConverter" />
+            <local1:SearchTypeToMultiLineVisibilityConverter x:Key="searchTypeToMultiLineVisibilityConverter" />
+            <local1:SearchTypeToMarginConverter x:Key="searchTypeToMarginConverter"/>
+            <local1:IsPathSelectedConverter x:Key="isPathSelectedConverter"/>
+            <local1:IsPathSelectedVisibleElements x:Key="isPathSelectedVisibleElements"/>
+            <local1:IsShowAddButtonConverter x:Key="isShowAddButtonConverter"/>
+            <local1:IsShowAddMenuConverter x:Key="isShowAddMenuConverter"/>
+            <local1:ShowPropertiesConverter x:Key="showPropertiesConverter"/>
+            <local1:ShowResultsConverter x:Key="showResultsConverter"/>
+            <local1:IsShowResultsConverter x:Key="isShowResultsConverter"/>
+            <local1:IsShowResultsHeightConverter x:Key="isShowResultsHeightConverter"/>
+            <local1:IsSuccessConverter x:Key="isSuccessConverter"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        <ScrollViewer Grid.Row="0" Grid.Column="0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  CanContentScroll="True">
+            <ListBox x:Name="taskList" ItemsSource="{Binding Tasks}" Background="{x:Null}" Foreground="{x:Null}" BorderThickness="0">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <TextBox Style="{StaticResource Multi-Line}" Text="{Binding Task.SearchValue}" Width="540" Margin="20, 35, 0, 0" HorizontalAlignment="Left" 
+                                 VerticalAlignment="Top" Visibility="{Binding Task.SearchMethod, Converter={StaticResource searchTypeToMultiLineVisibilityConverter}}"/>
+
+                            <TextBox Style="{StaticResource One-Line}" Text="{Binding Task.SearchValue}" Width="540" Margin="20, 35, 0, 0" HorizontalAlignment="Left" 
+                                 VerticalAlignment="Top" Visibility="{Binding Task.SearchMethod, Converter={StaticResource searchTypeToOneLineVisibilityConverter}}"/>
+
+
+                            <Button Margin="580, 35, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="66" Command="{Binding DataContext.SetPathCommand, ElementName=taskList}" 
+                                    CommandParameter="{Binding}" Visibility="{Binding IsPathSelected, Converter={StaticResource isPathSelectedConverter}}">
+                                <Image Height="33" Width="33">
+                                    <Image.Source>
+                                        <BitmapImage UriSource="../Resources/folder.png"/>
+                                    </Image.Source>
+                                </Image>
+                            </Button>
+                            <!--Other controls when folder will picked-->
+                            <Button Margin="580, 35, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="192" Visibility="{Binding IsPathSelected, Converter={StaticResource isPathSelectedVisibleElements}}"
+                                    Command="{Binding DataContext.ShowPathCommand, ElementName=taskList}" CommandParameter="{Binding}">
+                                <TextBlock Text="Show Path" Margin="0, -3, 0, 0"/>
+                            </Button>
+
+                            <Button Margin="792, 35, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="66" Visibility="{Binding IsStarted, Converter={StaticResource showPropertiesConverter}}"
+                                    Command="{Binding DataContext.GoCommand, ElementName=taskList}" CommandParameter="{Binding}">
+                                <TextBlock Text="Go" Margin="0, -3, 0, 0"/>
+                            </Button>
+
+                            <Button Margin="792, 35, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="192" Visibility="{Binding IsFinished, Converter={StaticResource showResultsConverter}}"
+                                    Command="{Binding DataContext.ShowResultsCommand, ElementName=taskList}" CommandParameter="{Binding}">
+                                <TextBlock Text="Results" Margin="0, -3, 0, 0"/>
+                            </Button>
+
+                            <Label Style="{StaticResource Subtitle}" Margin="1007, 35, 0, 0" HorizontalContentAlignment="Center" Content="{Binding CurrentTime}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="257" Visibility="{Binding IsPathSelected, Converter={StaticResource isPathSelectedVisibleElements}}"/>
+
+                            <Grid Height="{Binding IsShowResults, Converter={StaticResource isShowResultsHeightConverter}}" Margin="{Binding Task.SearchMethod, Converter={StaticResource searchTypeToMarginConverter}}" Visibility="{Binding IsShowResults, Converter={StaticResource isShowResultsConverter}}" Background="{StaticResource Background-Input}">
+                                <Label Style="{StaticResource Subtitle}" Content="{Binding IsSuccess, Converter={StaticResource isSuccessConverter}}" Margin="0, 12, 0, 0" HorizontalContentAlignment="Center"/>
+                                <Label Style="{StaticResource Subtitle}" FontSize="24" Content="{Binding Task.TaskInProcessTime}" Margin="772, 30, 0, 0" HorizontalContentAlignment="Left" Width="300"/>
+                                <ScrollViewer Margin="0, 80, 0, 0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Background="{x:Null}" Foreground="{x:Null}">
+                                    <ListBox x:Name="searchList" ItemsSource="{Binding SearchResults}" Background="{x:Null}" Foreground="{x:Null}" BorderThickness="0" >
+                                        <ListBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid Background="{x:Null}">
+                                                    <Button Margin="20, 20, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="192"
+                                                         Command="{Binding ElementName=ContentPageControl, Path=DataContext.OpenFileCommand}" CommandParameter="{Binding}">
+                                                        <TextBlock Text="Open File" Margin="0, -3, 0, 0"/>
+                                                    </Button>
+                                                    <Button Margin="232, 20, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="192"
+                                                         Command="{Binding ElementName=ContentPageControl, Path=DataContext.OpenFolderCommand}" CommandParameter="{Binding}">
+                                                        <TextBlock Text="Open Folder" Margin="0, -3, 0, 0"/>
+                                                    </Button>
+                                                    <Label x:Name="FilePath" Width="770" Margin="444, 40, 0, 0" FontSize="24" FontFamily="Arial" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center"
+                                                           Content="{Binding}"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ListBox.ItemTemplate>
+                                    </ListBox>
+                                </ScrollViewer>
+                            </Grid>
+
+                            <Grid Margin="{Binding Task.SearchMethod, Converter={StaticResource searchTypeToMarginConverter}}" Visibility="{Binding IsStarted, Converter={StaticResource showPropertiesConverter}}">
+                                <TextBox Style="{StaticResource One-Line}" Text="{Binding Task.FileMask}" Width="210" Margin="20, 0, 0, 0" HorizontalAlignment="Left" 
+                                 VerticalAlignment="Top"/>
+
+                                <ComboBox ItemsSource="{Binding SizeConditionEnums, Converter={StaticResource sizeConditionsConverter}}" SelectedItem="{Binding SelectedCondition, Converter={StaticResource sizeConditionConverter}}" Margin="252, 0, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="192" 
+                                  VerticalContentAlignment="Center" />
+
+                                <ComboBox ItemsSource="{Binding UnitsOfMeasure, Converter={StaticResource unitsOfMeasureConverter}}" SelectedItem="{Binding SelectedMeasure, Converter={StaticResource unitOfMeasureConverter}}" Margin="464, 0, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="175" 
+                                  VerticalContentAlignment="Center" />
+
+                                <TextBox Style="{StaticResource One-Line}" Text="{Binding Task.SizeValue}" Width="103" Margin="659, 0, 0, 0" HorizontalAlignment="Left" 
+                                 VerticalAlignment="Top"/>
+
+                                <ComboBox ItemsSource="{Binding DateConditions, Converter={StaticResource dateConditionsConverter}}" SelectedItem="{Binding SelectedDateCondition, Converter={StaticResource dateConditionConverter}}" Margin="782, 0, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="192" 
+                                  VerticalContentAlignment="Center" />
+
+                                <TextBox Style="{StaticResource One-Line}" Text="{Binding Task.DateValue}" Width="250" Margin="994, 0, 0, 0" HorizontalAlignment="Left" 
+                                 VerticalAlignment="Top"/>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </ScrollViewer>
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Button Margin="20, 0, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="66" Visibility="{Binding IsMenuOpened, Converter={StaticResource isShowAddButtonConverter}}"
+                        Command="{Binding OpenMenuCommand}" CommandParameter="{Binding}">
+                <TextBlock Text="+" Margin="0, -3, 0, 0"/>
+            </Button>
+            <Button Margin="20, 0, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="192" Visibility="{Binding IsMenuOpened, Converter={StaticResource isShowAddMenuConverter}}"
+                        Command="{Binding CreateFileTaskCommand}">
+                <TextBlock Text="File" Margin="0, -3, 0, 0"/>
+            </Button>
+            <Button Margin="234, 0, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="192" Visibility="{Binding IsMenuOpened, Converter={StaticResource isShowAddMenuConverter}}"
+                        Command="{Binding CreateContentTaskCommand}">
+                <TextBlock Text="Content" Margin="0, -3, 0, 0"/>
+            </Button>
+            <Button Margin="446, 0, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="192" Visibility="{Binding IsMenuOpened, Converter={StaticResource isShowAddMenuConverter}}"
+                        Command="{Binding CreateRegExTaskCommand}">
+                <TextBlock Text="RegEx" Margin="0, -3, 0, 0"/>
+            </Button>
+            <Button Margin="658, 0, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="66" Visibility="{Binding IsMenuOpened, Converter={StaticResource isShowAddMenuConverter}}"
+                        Command="{Binding CloseMenuCommand}">
+                <TextBlock Text="X" Margin="0, -3, 0, 0"/>
+            </Button>
+
+        </Grid>
+    </Grid>
+
+</UserControl>
